@@ -20,6 +20,7 @@ const ModeButton = () => {
                 <IconButton
                     borderRadius='1'
                     size='sm'
+                    align = "center"
                     aria-label="Toggle theme"
                     colorScheme={useColorModeValue('purple', 'orange')}
                     icon={useColorModeValue(<MoonIcon />, <SunIcon />)}
