@@ -11,7 +11,7 @@ const Subtitle = styled.span`
 
 const Title = styled.span`
   font-family: "Press Start 2P";
-  font-size: 15px;
+  font-size: 13px;
   font-weight: normal;
 `
 
@@ -30,6 +30,7 @@ const Name = styled.span`
 const Page =()=> {
     return (
         <Container>
+            <SectionTransition delay={0}>
             <Box bg = {useColorModeValue('#9BA4B5', '#F4EEE0')}
             p={2} align = "center" mb={5}>
                 <Subtitle>
@@ -53,9 +54,10 @@ const Page =()=> {
                         </Subtitle>
                     </Box>
                 </Box>
+            </SectionTransition>
 
             <SectionTransition delay={0.2}>
-                <Heading as="h3" marginTop={10} textDecoration="underline" textDecorationThickness={3}>
+                <Heading as="h3" marginTop={10} textDecoration="underline" textDecorationThickness={2}>
                     <Title>
                         <Text color = {useColorModeValue('#394867', '#f2f2f0')}>
                          About Me
@@ -73,7 +75,44 @@ const Page =()=> {
                         </Text>
                     </Body>
                 </Box>
+            </SectionTransition>
 
+            <SectionTransition delay={0.3}>
+                <Heading as="h3" marginTop={10} textDecoration="underline" textDecorationThickness={2}>
+                    <Title>
+                        <Text  color = {useColorModeValue('#394867', '#f2f2f0')}>
+                            I Enjoy...
+                        </Text>
+                    </Title>
+                </Heading>
+
+                <Box  marginTop={3} >
+                    <Body>
+                        <Text color = {useColorModeValue('#212A3E', '#F4EEE0')}>
+                            playing video games - camping - eating - breathing
+                        </Text>
+                        <Text fontSize={15} color = {useColorModeValue('#212A3E', '#F4EEE0')}>
+                            (at least I'm aware that I'm boring)
+                        </Text>
+                    </Body>
+                </Box>
+            </SectionTransition>
+
+            <SectionTransition delay={0.4}>
+                <Heading as="h3" marginTop={10} textDecoration="underline" textDecorationThickness={2}>
+                    <Title>
+                        <Text color = {useColorModeValue('#394867', '#f2f2f0')}>
+                            Connect With Me:
+                        </Text>
+                    </Title>
+                </Heading>
+                <Box  marginTop={3} >
+                    <Body>
+                        <Text color = {useColorModeValue('#212A3E', '#F4EEE0')}>
+                            [...]
+                        </Text>
+                    </Body>
+                </Box>
             </SectionTransition>
         </Container>
     )

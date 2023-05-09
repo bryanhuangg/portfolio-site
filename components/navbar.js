@@ -49,6 +49,7 @@ const ButtonFont = styled.span`
 const Inline = styled.span`
   display: inline-flex;
   align-items: center;
+  
 `
 
 const Navbar = props => {
@@ -98,7 +99,7 @@ const Navbar = props => {
 
                         <LinkItem href="https://github.com/bhuang-dev/portfolio-site">
                             <Inline>
-                                <img src={githubImg} width={15} height={15} alt="logo" />
+                                <img src={githubImg} width={17} height={17} alt="logo" />
                             </Inline>
                         </LinkItem>
                     </ButtonFont>
@@ -126,7 +127,9 @@ const Navbar = props => {
                                         Contact
                                     </MenuItem>
                                     <MenuItem as={MenuForwardLink} href = "https://github.com/bhuang-dev/portfolio-site">
-                                        <img src={githubImg} width={18} height={18} alt="logo" />
+                                        <Inline>
+                                            <img src={githubImg} width={20} height={20} alt="logo" />
+                                        </Inline>
                                     </MenuItem>
                                 </ButtonFont>
                             </MenuList>
