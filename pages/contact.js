@@ -1,13 +1,13 @@
 import {Container, Text} from "@chakra-ui/react";
 
-const Projects =()=> {
+const Contact =()=> {
     return(
         <Container>
             <Text>
-                Project
+                Contact
             </Text>
         </Container>
     )
 }
 
-export default Projects
+export default Contact

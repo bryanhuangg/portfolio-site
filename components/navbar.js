@@ -15,15 +15,18 @@ import {
     useColorModeValue
 } from '@chakra-ui/react'
 import styled from "@emotion/styled";
+import { HamburgerIcon } from '@chakra-ui/icons'
+import {forwardRef} from "react";
+import ModeButton from "./mode-button";
 
 const LinkItem = ({href, path, target, children, ...props}) => {
     const active = path === href
-    const inactiveColor = useColorModeValue('gray.800', 'whiteAlpha.900')
+    const inactiveColor = useColorModeValue('#394867', '#f2f2f0')
     return (
             <Link as = { NextLink }
                   p={2}
                   bg={active ? 'glassTeal' : undefined}
-                  color={active ? '#202023' : inactiveColor}
+                  color={active ?  useColorModeValue('#212A3E', '#F4EEE0') : inactiveColor}
                   href={href}
                   scroll={false}
                   target={target}
@@ -32,6 +35,10 @@ const LinkItem = ({href, path, target, children, ...props}) => {
             </Link>
     )
 }
+
+const MenuForwardLink = forwardRef((props, ref) => (
+    <Link ref={ref} as={NextLink} {...props}/>
+))
 
 const ButtonFont = styled.span`
   font-family: "Press Start 2P";
@@ -46,12 +53,12 @@ const Inline = styled.span`
 
 const Navbar = props => {
     const {path} = props
-    const githubImg = `/images/github${useColorModeValue('', '')}.png`
+    const githubImg = `/images/github${useColorModeValue('-dark', '-light3')}.png`
     return (
         <Box position="fixed"
              as="nav"
              w="100%"
-             bg={useColorModeValue('#ffffff40', '#20202380')}
+             bg={useColorModeValue('#e8effa', '#393646')}
              style={{backdropFilter: 'blur(10px'}}
              zIndex={1}
              {...props}
@@ -85,8 +92,8 @@ const Navbar = props => {
                             Resume
                         </LinkItem>
 
-                        <LinkItem href="/about" path={path}>
-                            About
+                        <LinkItem href="/contact" path={path}>
+                            Contact
                         </LinkItem>
 
                         <LinkItem href="https://github.com/bhuang-dev/portfolio-site">
@@ -96,6 +103,37 @@ const Navbar = props => {
                         </LinkItem>
                     </ButtonFont>
                 </Stack>
+
+                <Box flex={1} align="right">
+                    <ModeButton/>
+                    <Box ml={2} display={{base: 'inline-block', md:'none'}}>
+                        <Menu>
+                            <MenuButton as={IconButton} icon={<HamburgerIcon/>}
+                                variant = "none"
+                                aria-label = "Options"/>
+                            <MenuList>
+                                <ButtonFont>
+                                    <MenuItem as={MenuForwardLink} href = "/">
+                                        Home
+                                    </MenuItem>
+                                    <MenuItem as={MenuForwardLink} href = "/projects">
+                                        Projects
+                                    </MenuItem>
+                                    <MenuItem as={MenuForwardLink} href = "/resume">
+                                        Resume
+                                    </MenuItem>
+                                    <MenuItem as={MenuForwardLink} href = "/contact">
+                                        Contact
+                                    </MenuItem>
+                                    <MenuItem as={MenuForwardLink} href = "https://github.com/bhuang-dev/portfolio-site">
+                                        <img src={githubImg} width={18} height={18} alt="logo" />
+                                    </MenuItem>
+                                </ButtonFont>
+                            </MenuList>
+                        </Menu>
+                    </Box>
+
+                </Box>
             </Container>
         </Box>
     )

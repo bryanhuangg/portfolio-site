@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 
 const LogoBox = styled.span`
     font-family: "Press Start 2P";
-    font-weight: Bolder;
+    font-weight: normal;
     font-size: 12px;
     display: inline-flex;
     align-items: center;
@@ -19,14 +19,14 @@ const LogoBox = styled.span`
 `
 
 const Logo = () => {
-    const dinoImg = `/images/dino${useColorModeValue('-dark', '-light')}.png`
+    const dinoImg = `/images/dino${useColorModeValue('-dark3', '-light2')}.png`
     return (
         <Link legacyBehavior href="/">
             <a>
                 <LogoBox>
                     <Image src={dinoImg} width={30} height={30} alt="logo" />
                     <Text
-                        color = {useColorModeValue('gray.800', 'whiteAlpha.900')}
+                        color = {useColorModeValue('#212A3E', 'white.800')}
                         ml={2}>
                         BHUANG-DEV
                     </Text>
