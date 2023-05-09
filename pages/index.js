@@ -1,20 +1,36 @@
-import {Container, Box, Heading} from '@chakra-ui/react'
+import {Container, Box, Heading, Text, useColorModeValue} from '@chakra-ui/react'
+import Link from "next/link";
+import styled from "@emotion/styled";
+
+const Subtitle = styled.span`
+  font-family: "Press Start 2P";
+  font-size: 10px;
+  font-weight: lighter;
+`
+
+const Name = styled.span`
+  font-family: "Press Start 2P";
+  font-size: 25px;
+  font-weight: bold;
+  as: h2
+`
 const Page =()=> {
     return (
         <Container>
             <Box borderRadius = "lg" bg = "red" p={3} align = "center" mb={6}>
-                Hello, my name is Bryan. I am a computer science student.
+                Hello, welcome to my portfolio!
             </Box>
 
-            <Box display ={{ md:'flex'}}>
-                <Box flexGrow={1}>
-                    <Heading as="h2" variant="page-title">
-                        Bryan Huang
-                    </Heading>
-                    <p>Computer Science Student at the University of British Columbia </p>
+                <Box display ={{ md:'flex'}}>
+                    <Box flexGrow={1}>
+                        <Name>
+                            Bryan Huang
+                        </Name>
+                        <Subtitle>
+                            <p>Computer Science Student at UBC </p>
+                        </Subtitle>
+                    </Box>
                 </Box>
-            </Box>
-
         </Container>
     )
 }
