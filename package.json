@@ -4,7 +4,8 @@
   "description": "Personal portfolio website",
   "scripts": {
     "dev": "next dev -H 0.0.0.0",
-    "build": "next build",
+    "build": "vercel-build=false next build",
+    "start": "next start",
     "prettier": "prettier -write",
     "lint": "next lint"
   },
