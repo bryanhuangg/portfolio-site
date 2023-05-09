@@ -1,0 +1,40 @@
+{
+  "name": "portfolio-site",
+  "version": "1.0.0",
+  "description": "Personal portfolio website",
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0",
+    "build": "next build",
+    "prettier": "prettier -write",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhuang-dev/portfolio-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bhuang-dev/portfolio-site/issues"
+  },
+  "homepage": "https://github.com/bhuang-dev/portfolio-site#readme",
+  "dependencies": {
+    "@chakra-ui/icons": "^2.0.19",
+    "@chakra-ui/react": "^2.6.1",
+    "@chakra-ui/theme-tools": "^2.0.17",
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@fontsource/press-start-2p": "^4.5.11",
+    "framer-motion": "^10.12.8",
+    "next": "^13.4.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.40.0",
+    "eslint-config-next": "^13.4.1",
+    "prettier": "^2.8.8",
+    "react-scripts": "^2.1.3"
+  }
+}
