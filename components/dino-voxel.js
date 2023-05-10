@@ -69,6 +69,7 @@ const DinoVoxel = () => {
 
             const controls = new OrbitControls(camera, renderer.domElement)
             controls.autoRotate = true
+            controls.autoRotateSpeed = -2;
             controls.target = target
 
             loadGLTF(scene, '/dino-voxel2.glb', {
