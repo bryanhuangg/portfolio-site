@@ -18,8 +18,20 @@ const DinoVoxel = () => {
             const scW = container.clientWidth
             const scH = container.clientHeight
             renderer.setSize(scW, scH)
+            const aspectRatio = scW / scH
+            const scale = scH * 0.004
+            const camera = renderer.camera
+            if (camera) {
+                camera.left = -scale * aspectRatio
+                camera.right = scale * aspectRatio
+                camera.top = scale
+                camera.bottom = -scale
+                camera.updateProjectionMatrix()
+            }
         }
     }, [])
+
+
 
 
     useEffect(() => {
@@ -61,6 +73,7 @@ const DinoVoxel = () => {
                 0.03,
                 50000
             );
+
             camera.position.copy(initialCameraPosition)
             camera.lookAt(target)
 
