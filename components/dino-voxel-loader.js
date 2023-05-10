@@ -19,7 +19,7 @@ export const VoxelContainer = forwardRef(({ children }, ref) => (
         m="auto"
         mt="auto"
         mb="0"
-        w="500px"
+        w="100%"
         h="250px"
         position="relative"
     >
