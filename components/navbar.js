@@ -17,7 +17,7 @@ import {
 import styled from "@emotion/styled";
 import { HamburgerIcon } from '@chakra-ui/icons'
 import {forwardRef} from "react";
-import ModeButton from "./mode-button";
+import ThemeToggle from "./theme-toggle";
 
 const LinkItem = ({href, path, target, children, ...props}) => {
     const active = path === href
@@ -106,7 +106,7 @@ const Navbar = props => {
                 </Stack>
 
                 <Box flex={1} align="right">
-                    <ModeButton/>
+                    <ThemeToggle/>
                     <Box ml={2} display={{base: 'inline-block', md:'none'}}>
                         <Menu>
                             <MenuButton as={IconButton} icon={<HamburgerIcon/>}

@@ -4,7 +4,7 @@ import { SunIcon, MoonIcon } from '@chakra-ui/icons'
 
 
 // source : github.com/craftzdog
-const ModeButton = () => {
+const ThemeToggle = () => {
     const { toggleColorMode } = useColorMode()
 
     return (
@@ -31,4 +31,4 @@ const ModeButton = () => {
     )
 }
 
-export default ModeButton
+export default ThemeToggle

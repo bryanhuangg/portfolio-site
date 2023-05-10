@@ -1,6 +1,13 @@
 import Head from 'next/head'
 import Navbar from '../navbar'
 import { Box, Container} from '@chakra-ui/react'
+import DinoVoxelLoader from "../dino-voxel-loader";
+import dynamic from "next/dynamic";
+
+const LazyVoxel = dynamic(() => import('../dino-voxel'), {
+    ssr: false,
+    loading: () => <DinoVoxelLoader />
+})
 
 const Main = ({children, router}) => {
     return (
@@ -14,6 +21,7 @@ const Main = ({children, router}) => {
             <Navbar path={router.asPath} />
 
             <Container maxW="container.md" pt={14}>
+                <LazyVoxel/>
                 {children}
             </Container>
         </Box>
