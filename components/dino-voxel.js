@@ -102,7 +102,7 @@ const DinoVoxel = () => {
 
                 if (frame <= 100) {
                     const p = initialCameraPosition
-                    const rotSpeed = -easeOut(frame / 120) * Math.PI * 20
+                    const rotSpeed = -easeOut(frame / 120) * Math.PI * 17
 
                     camera.position.y = 5
                     camera.position.x =
