@@ -16,7 +16,7 @@ const Resume =()=> {
                      p={2} align = "center" mb={5}>
                     <PressStart>
                         <Text color = "#212A3E">
-                            My resume
+                            My Resume
                         </Text>
                     </PressStart>
                 </Box>
