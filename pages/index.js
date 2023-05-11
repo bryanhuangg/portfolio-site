@@ -1,7 +1,9 @@
-import {Container, Box, Heading, Text, useColorModeValue} from '@chakra-ui/react'
+import {Container, Box, Heading, Text, useColorModeValue, List, ListItem, Button} from '@chakra-ui/react'
 import Link from "next/link";
 import styled from "@emotion/styled";
 import SectionTransition from "../components/section-transition";
+import {IoLogoGithub, IoLogoLinkedin, IoMail} from "react-icons/io5";
+
 
 const Subtitle = styled.span`
   font-family: "Press Start 2P";
@@ -108,9 +110,49 @@ const Page =()=> {
                 </Heading>
                 <Box  marginTop={3} >
                     <Body>
-                        <Text color = {useColorModeValue('#212A3E', '#F4EEE0')}>
-                            [...]
-                        </Text>
+                        <List>
+                            <ListItem>
+                                <Link href="https://github.com/bhuang-dev" target="_blank">
+                                    <Button
+                                        variant="ghost"
+                                        colorScheme= {useColorModeValue('#212A3E', '#F4EEE0')}
+                                        leftIcon={<IoLogoGithub />}
+                                        fontSize="lg"
+                                        fontWeight="lighter"
+                                    >
+                                        /bhuang-dev
+                                    </Button>
+                                </Link>
+                            </ListItem>
+
+                            <ListItem>
+                                <Link href="https://www.linkedin.com/in/bhuang-dev/" target="_blank">
+                                    <Button
+                                        variant="ghost"
+                                        colorScheme= {useColorModeValue('#212A3E', '#F4EEE0')}
+                                        leftIcon={<IoLogoLinkedin />}
+                                        fontSize="lg"
+                                        fontWeight="lighter"
+                                    >
+                                        /bhuang-dev
+                                    </Button>
+                                </Link>
+                            </ListItem>
+
+                            <ListItem>
+                                <Link href="mailto:bryanhuang66@gmail.com" target="_blank">
+                                    <Button
+                                        variant="ghost"
+                                        colorScheme= {useColorModeValue('#212A3E', '#F4EEE0')}
+                                        leftIcon={<IoMail />}
+                                        fontSize="lg"
+                                        fontWeight="lighter"
+                                    >
+                                        bryanhuang66@gmail.com
+                                    </Button>
+                                </Link>
+                            </ListItem>
+                        </List>
                     </Body>
                 </Box>
             </SectionTransition>

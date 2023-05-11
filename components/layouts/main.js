@@ -3,6 +3,7 @@ import Navbar from '../navbar'
 import { Box, Container} from '@chakra-ui/react'
 import DinoVoxelLoader from "../dino-voxel-loader";
 import dynamic from "next/dynamic";
+import Footer from "../footer";
 
 const LazyVoxel = dynamic(() => import('../dino-voxel'), {
     ssr: false,
@@ -24,6 +25,7 @@ const Main = ({children, router}) => {
                 <LazyVoxel/>
                 {children}
             </Container>
+            <Footer/>
         </Box>
     )
 }
