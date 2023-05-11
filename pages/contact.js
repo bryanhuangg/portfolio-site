@@ -38,7 +38,7 @@ const Contact =()=> {
                                 <Link href="https://github.com/bhuang-dev" target="_blank">
                                     <Button
                                         variant="ghost"
-                                        colorScheme= {useColorModeValue('#212A3E', '#F4EEE0')}
+                                        colorScheme= "gray"
                                         leftIcon={<IoLogoGithub />}
                                         fontSize="xl"
                                         fontWeight="lighter"
@@ -52,7 +52,7 @@ const Contact =()=> {
                                 <Link href="https://www.linkedin.com/in/bhuang-dev/" target="_blank">
                                     <Button
                                         variant="ghost"
-                                        colorScheme= {useColorModeValue('#212A3E', '#F4EEE0')}
+                                        colorScheme= "gray"
                                         leftIcon={<IoLogoLinkedin />}
                                         fontSize="xl"
                                         fontWeight="lighter"
@@ -66,7 +66,7 @@ const Contact =()=> {
                                 <Link href="mailto:bryanhuang66@gmail.com" target="_blank">
                                     <Button
                                         variant="ghost"
-                                        colorScheme= {useColorModeValue('#212A3E', '#F4EEE0')}
+                                        colorScheme= "gray"
                                         leftIcon={<IoMail />}
                                         fontSize="xl"
                                         fontWeight="lighter"

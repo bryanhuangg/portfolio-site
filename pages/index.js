@@ -115,7 +115,7 @@ const Page =()=> {
                                 <Link href="https://github.com/bhuang-dev" target="_blank">
                                     <Button
                                         variant="ghost"
-                                        colorScheme= {useColorModeValue('#212A3E', '#F4EEE0')}
+                                        colorScheme= "gray"
                                         leftIcon={<IoLogoGithub />}
                                         fontSize="lg"
                                         fontWeight="lighter"
@@ -129,7 +129,7 @@ const Page =()=> {
                                 <Link href="https://www.linkedin.com/in/bhuang-dev/" target="_blank">
                                     <Button
                                         variant="ghost"
-                                        colorScheme= {useColorModeValue('#212A3E', '#F4EEE0')}
+                                        colorScheme= "gray"
                                         leftIcon={<IoLogoLinkedin />}
                                         fontSize="lg"
                                         fontWeight="lighter"
@@ -143,7 +143,7 @@ const Page =()=> {
                                 <Link href="mailto:bryanhuang66@gmail.com" target="_blank">
                                     <Button
                                         variant="ghost"
-                                        colorScheme= {useColorModeValue('#212A3E', '#F4EEE0')}
+                                        colorScheme= "gray"
                                         leftIcon={<IoMail />}
                                         fontSize="lg"
                                         fontWeight="lighter"
