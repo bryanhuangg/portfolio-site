@@ -33,25 +33,25 @@ const Projects =()=> {
 
 
             <SimpleGrid columns={[1, 1, 2]} gap={6} justifyItems="center" >
-                <SectionTransition>
+                <SectionTransition delay={0.2}>
                     <WorkGridItem id="portfolio" title="Portfolio Website" thumbnail={thumbPortfolioWebsite}>
                      The site you're on right now!
                     </WorkGridItem>
                 </SectionTransition>
 
-                <SectionTransition>
+                <SectionTransition delay={0.2}>
                     <WorkGridItem id="insightUBC" title="InsightUBC" thumbnail={thumbInsight}>
                         UBC Query Engine
                     </WorkGridItem>
                 </SectionTransition>
 
-                <SectionTransition>
+                <SectionTransition delay={0.25}>
                     <WorkGridItem id="checkers" title="Checkers" thumbnail={thumbCheckers}>
                         Java Checkers Application
                     </WorkGridItem>
                 </SectionTransition>
 
-                <SectionTransition>
+                <SectionTransition delay={0.25}>
                     <WorkGridItem id="tilegame" title="Tile-based Game" thumbnail={thumbTileGame}>
                         Arcade themed puzzle game
                     </WorkGridItem>
