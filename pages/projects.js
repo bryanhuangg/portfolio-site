@@ -1,6 +1,13 @@
-import {Box, Container, Text, useColorModeValue} from "@chakra-ui/react";
+import {Box, Container, SimpleGrid, Text, useColorModeValue} from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import SectionTransition from "../components/section-transition";
+import { WorkGridItem } from "../components/grid-items";
+
+import thumbPortfolioWebsite from '../public/images/thumbDino.png'
+import thumbCheckers from '../public/images/thumbCheckers5.png'
+import thumbTileGame from '../public/images/thumbTile.png'
+import thumbInsight from '../public/images/thumbInsight.png'
+
 
 const PressStart = styled.span`
   font-family: "Press Start 2P";
@@ -17,18 +24,43 @@ const Projects =()=> {
                          p={2} align = "center" mb={5}>
                         <PressStart>
                             <Text color = "#212A3E">
-                                Projects I have worked on:
+                                Projects I have recently worked on:
                             </Text>
                         </PressStart>
                     </Box>
                 </SectionTransition>
-
-                <PressStart>
-                    <Text>
-                        Sorry, this part of the site is still WIP! [Projects]
-                    </Text>
-                </PressStart>
             </Text>
+
+
+            <SimpleGrid columns={[1, 1, 2]} gap={6} justifyItems="center" >
+                <SectionTransition>
+                    <WorkGridItem id="portfolio" title="Portfolio Website" thumbnail={thumbPortfolioWebsite}>
+                     The site you're on right now!
+                    </WorkGridItem>
+                </SectionTransition>
+
+                <SectionTransition>
+                    <WorkGridItem id="insightUBC" title="InsightUBC" thumbnail={thumbInsight}>
+                        UBC Query Engine
+                    </WorkGridItem>
+                </SectionTransition>
+
+                <SectionTransition>
+                    <WorkGridItem id="checkers" title="Checkers" thumbnail={thumbCheckers}>
+                        Java Checkers Application
+                    </WorkGridItem>
+                </SectionTransition>
+
+                <SectionTransition>
+                    <WorkGridItem id="tilegame" title="Tile-based Game" thumbnail={thumbTileGame}>
+                        Arcade themed puzzle game
+                    </WorkGridItem>
+                </SectionTransition>
+            </SimpleGrid>
+
+
+
+
         </Container>
     )
 }
