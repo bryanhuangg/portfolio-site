@@ -7,7 +7,7 @@ import thumbPortfolioWebsite from '../public/images/thumbDino.png'
 import thumbCheckers from '../public/images/thumbCheckers5.png'
 import thumbTileGame from '../public/images/thumbTile.png'
 import thumbInsight from '../public/images/thumbInsight.png'
-
+import thumbPlatodoro from '../public/images/plat.png'
 
 const PressStart = styled.span`
   font-family: "Press Start 2P";
@@ -35,11 +35,17 @@ const Projects =()=> {
             <SimpleGrid columns={[1, 1, 2]} gap={6} justifyItems="center" >
                 <SectionTransition delay={0.2}>
                     <WorkGridItem id="portfolio" title="Portfolio Website" thumbnail={thumbPortfolioWebsite}>
-                     The site you're on right now!
+                        The site you're on right now!
                     </WorkGridItem>
                 </SectionTransition>
 
                 <SectionTransition delay={0.2}>
+                    <WorkGridItem id="platodoro" title="Platodoro" thumbnail={thumbPlatodoro}>
+                        Pomodoro Timer w/ a Platypus
+                    </WorkGridItem>
+                </SectionTransition>
+
+                <SectionTransition delay={0.25}>
                     <WorkGridItem id="insightUBC" title="InsightUBC" thumbnail={thumbInsight}>
                         UBC Query Engine
                     </WorkGridItem>
@@ -51,7 +57,7 @@ const Projects =()=> {
                     </WorkGridItem>
                 </SectionTransition>
 
-                <SectionTransition delay={0.25}>
+                <SectionTransition delay={0.3}>
                     <WorkGridItem id="tilegame" title="Tile-based Game" thumbnail={thumbTileGame}>
                         Arcade themed puzzle game
                     </WorkGridItem>
