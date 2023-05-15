@@ -105,9 +105,9 @@ const Navbar = props => {
                         </LinkItem>
 
                         <LinkItem href="https://github.com/bhuang-dev/portfolio-site">
-                            <Text style={{ display: 'flex', alignItems: 'center' }}>
-                                <IoLogoGithub size={15} style={{ marginRight: '4px', verticalAlign: 'middle' }} />
-                                <span style={{ marginTop: '5px' }}>Source </span>
+                            <IoLogoGithub size={15} style={{ marginRight: '4px', verticalAlign: 'middle' }} />
+                            <Text style={{ display: 'flex', alignItems: 'center', marginTop: '5px' }}>
+                                Source
                             </Text>
                         </LinkItem>
                     </ButtonFont>
@@ -135,9 +135,9 @@ const Navbar = props => {
                                         Contact
                                     </MenuItem>
                                     <MenuItem as={MenuForwardLink} href = "https://github.com/bhuang-dev/portfolio-site">
-                                        <Text style={{ display: 'flex', alignItems: 'center' }}>
-                                            <IoLogoGithub size={15} style={{ marginRight: '5px', verticalAlign: 'middle' }} />
-                                            <span style={{ marginTop: '4px' }}>Source </span>
+                                        <IoLogoGithub size={15} style={{ marginRight: '4px', verticalAlign: 'middle' }} />
+                                        <Text style={{ display: 'flex', alignItems: 'center', marginTop: '5px' }}>
+                                            Source
                                         </Text>
                                     </MenuItem>
                                 </ButtonFont>
