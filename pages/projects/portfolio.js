@@ -22,7 +22,7 @@ const Portfolio=()=> {
                      p={2} align = "center" mb={5}>
                     <PressStart>
                         <Text color = "#212A3E">
-                            Portfolio Site [PAGE WIP]
+                            Portfolio Site
                         </Text>
                     </PressStart>
                 </Box>

@@ -57,7 +57,7 @@ const Projects =()=> {
 
                 <SectionTransition delay={0.25}>
                     <WorkGridItem id="checkers" title="Checkers">
-                        Simple checkers application, coded in Java. My CPSC 310 term project.
+                        Simple checkers application, coded in Java. My CPSC 210 term project.
                     </WorkGridItem>
                 </SectionTransition>
 

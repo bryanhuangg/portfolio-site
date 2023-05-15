@@ -6,6 +6,7 @@ import {
     Link,
     Stack,
     Heading,
+    Text,
     Flex,
     Menu,
     MenuItem,
@@ -18,21 +19,31 @@ import styled from "@emotion/styled";
 import { HamburgerIcon } from '@chakra-ui/icons'
 import {forwardRef} from "react";
 import ThemeToggle from "./theme-toggle";
+import {IoLogoGithub} from "react-icons/io5";
 
 const LinkItem = ({href, path, target, children, ...props}) => {
     const active = path === href
     const inactiveColor = useColorModeValue('#394867', '#f2f2f0')
     return (
-            <Link as = { NextLink }
-                  p={2}
-                  bg={active ? 'glassTeal' : undefined}
-                  color={active ?  useColorModeValue('#212A3E', '#F4EEE0') : inactiveColor}
-                  href={href}
-                  scroll={false}
-                  target={target}
-                  {...props}>
-                  {children}
-            </Link>
+        <Link
+            as={NextLink}
+            p={2}
+            bg={active ? 'glassTeal' : undefined}
+            color={active ? useColorModeValue('#212A3E', '#F4EEE0') : inactiveColor}
+            href={href}
+            scroll={false}
+            target={target}
+            {...props}
+            style={{
+                display: 'inline-flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                position: 'relative',
+
+            }}
+        >
+            {children}
+        </Link>
     )
 }
 
@@ -46,11 +57,6 @@ const ButtonFont = styled.span`
   font-weight: lighter;
 `
 
-const Inline = styled.span`
-  display: inline-flex;
-  align-items: center;
-  
-`
 
 const Navbar = props => {
     const {path} = props
@@ -62,13 +68,14 @@ const Navbar = props => {
              bg={useColorModeValue('#e8effa', '#393646')}
              style={{backdropFilter: 'blur(10px'}}
              zIndex={1}
-             {...props}
-        >
-            <Container display = "flex" p={1}
-                       maxW = "container.md"
-                       wrap = "wrap"
-                       align = "center"
-                       justify = "space-between">
+             {...props}>
+
+            <Container display="flex"
+                       p={1}
+                       maxW="container.md"
+                       wrap="wrap"
+                       align="center"
+                       justify="space-between">
 
                 <Flex align="center" mr={8}>
                     <Heading as = "h1" size = "lg" letterSpacing = {'tighter'}>
@@ -98,9 +105,10 @@ const Navbar = props => {
                         </LinkItem>
 
                         <LinkItem href="https://github.com/bhuang-dev/portfolio-site">
-                            <Inline>
-                                <img src={githubImg} width={17} height={17} alt="logo" />
-                            </Inline>
+                            <Text style={{ display: 'flex', alignItems: 'center' }}>
+                                <IoLogoGithub size={15} style={{ marginRight: '4px', verticalAlign: 'middle' }} />
+                                <span style={{ marginTop: '5px' }}>Source </span>
+                            </Text>
                         </LinkItem>
                     </ButtonFont>
                 </Stack>
@@ -127,9 +135,10 @@ const Navbar = props => {
                                         Contact
                                     </MenuItem>
                                     <MenuItem as={MenuForwardLink} href = "https://github.com/bhuang-dev/portfolio-site">
-                                        <Inline>
-                                            <img src={githubImg} width={20} height={20} alt="logo" />
-                                        </Inline>
+                                        <Text style={{ display: 'flex', alignItems: 'center' }}>
+                                            <IoLogoGithub size={15} style={{ marginRight: '5px', verticalAlign: 'middle' }} />
+                                            <span style={{ marginTop: '4px' }}>Source </span>
+                                        </Text>
                                     </MenuItem>
                                 </ButtonFont>
                             </MenuList>

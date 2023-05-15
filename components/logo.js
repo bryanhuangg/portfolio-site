@@ -27,7 +27,8 @@ const Logo = () => {
                     <Image src={dinoImg} width={30} height={30} alt="logo" />
                     <Text
                         color = {useColorModeValue('#212A3E', 'white.800')}
-                        ml={2}>
+                        ml={2}
+                        mt={1.5}>
                         BHUANG-DEV
                     </Text>
                 </LogoBox>
