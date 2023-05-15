@@ -22,7 +22,7 @@ const Checkers =()=> {
                      p={2} align = "center" mb={5}>
                     <PressStart>
                         <Text color = "#212A3E">
-                            Checkers Application [PAGE WIP]
+                            Checkers Application
                         </Text>
                     </PressStart>
                 </Box>

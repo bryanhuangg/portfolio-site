@@ -22,7 +22,7 @@ const Platodoro=()=> {
                      p={2} align = "center" mb={5}>
                     <PressStart>
                         <Text color = "#212A3E">
-                            Platodoro [PAGE WIP]
+                            Platodoro
                         </Text>
                     </PressStart>
                 </Box>

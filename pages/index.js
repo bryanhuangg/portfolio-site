@@ -59,7 +59,7 @@ const Page =()=> {
             </SectionTransition>
 
             <SectionTransition delay={0.2}>
-                <Heading as="h3" marginTop={10} textDecoration="underline" textDecorationThickness={2}>
+                <Heading as="h3" marginTop={10} >
                     <Title>
                         <Text color = {useColorModeValue('#394867', '#f2f2f0')}>
                          About Me
@@ -80,7 +80,7 @@ const Page =()=> {
             </SectionTransition>
 
             <SectionTransition delay={0.3}>
-                <Heading as="h3" marginTop={10} textDecoration="underline" textDecorationThickness={2}>
+                <Heading as="h3" marginTop={10}>
                     <Title>
                         <Text  color = {useColorModeValue('#394867', '#f2f2f0')}>
                             I Enjoy...
@@ -101,7 +101,7 @@ const Page =()=> {
             </SectionTransition>
 
             <SectionTransition delay={0.4}>
-                <Heading as="h3" marginTop={10} textDecoration="underline" textDecorationThickness={2}>
+                <Heading as="h3" marginTop={10} >
                     <Title>
                         <Text color = {useColorModeValue('#394867', '#f2f2f0')}>
                             Connect With Me:

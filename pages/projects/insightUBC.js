@@ -22,7 +22,7 @@ const InsightUBC =()=> {
                      p={2} align = "center" mb={5}>
                     <PressStart>
                         <Text color = "#212A3E">
-                            InsightUBC [PAGE WIP]
+                            InsightUBC
                         </Text>
                     </PressStart>
                 </Box>
