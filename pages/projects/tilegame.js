@@ -22,7 +22,7 @@ const TileGame=()=> {
                      p={2} align = "center" mb={5}>
                     <PressStart>
                         <Text color = "#212A3E">
-                            Tile-based Puzzle Game
+                            Tile-based Puzzle Game [WIP]
                         </Text>
                     </PressStart>
                 </Box>
