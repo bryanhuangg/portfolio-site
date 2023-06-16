@@ -69,7 +69,7 @@ const Page =()=> {
                 <Box  marginTop={3} >
                     <Body>
                         <Text color = {useColorModeValue('#212A3E', '#F4EEE0')}>
-                            Hello there, I'm Bryan! Currently I am a university student at the University of British Columbia studying
+                            Hello there, I'm Bryan! Currently, I am a student at the University of British Columbia studying
                             Computer Science as well as Economics. My passion for technology  started at a young age,
                             and I've been fascinated by how the power of software is able change the world ever since.
                             If you're looking for a driven, motivated software developer/engineer to join your team, I'd love to
