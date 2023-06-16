@@ -1,4 +1,4 @@
-import {Box, Button, Container, Heading, List, ListItem, Text, useColorModeValue} from "@chakra-ui/react";
+import {Box, Button, Center, Container, Heading, List, ListItem, Text, useColorModeValue} from "@chakra-ui/react";
 import styled from "@emotion/styled";
 import SectionTransition from "../../components/section-transition";
 import Link from "next/link";
@@ -74,8 +74,30 @@ const InsightUBC =()=> {
                 </Body>
             </SectionTransition>
 
+            <SectionTransition delay={0.3}>
+                <Body>
+                    <Title color={useColorModeValue("#394867", "#f2f2f0")}>
+                        Preview
+                    </Title>
+                    <br/>
+                    The front-end showcased by my project partner
+                    <Center mt={4}>
+                        <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                            <iframe
+                                style={{ flex: 'auto' }}
+                                width="80%"
+                                height="255"
+                                src="https://www.youtube.com/embed/kzyFysdGFzU"
+                                frameborder="0"
 
-            <SectionTransition delay={0.25}>
+                            ></iframe>
+                        </div>
+                    </Center>
+                </Body>
+            </SectionTransition>
+
+
+            <SectionTransition delay={0.3}>
                 <Body>
                     <Title color={useColorModeValue("#394867", "#f2f2f0")}>
                         <Icon as={BsStack} boxSize={4} mr={2} />
