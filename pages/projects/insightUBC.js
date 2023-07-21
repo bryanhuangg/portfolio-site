@@ -43,7 +43,7 @@ const InsightUBC =()=> {
                 <Body style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <List>
                         <ListItem>
-                            <Link href="https://github.com/bhuang-dev/portfolio-site" target="_blank">
+                            <Link href="https://sites.google.com/view/ubc-cpsc310-22w2/project/overview" target="_blank">
                                 <Button
                                     variant="ghost"
                                     colorScheme="gray"
