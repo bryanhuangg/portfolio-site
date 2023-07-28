@@ -35,7 +35,7 @@ const Resume =()=> {
                     </PressStart>
                 </Box>
                 <Body style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
-                    <Link href="resume3.pdf" download type="application/pdf">
+                    <Link href="resume4.pdf" download type="application/pdf">
                         <Button
                             variant="ghost"
                             colorScheme= "gray"
@@ -132,7 +132,7 @@ const Resume =()=> {
                                 September 2021 - Present
                             </Text>
                             <Text style={{ marginTop: '-0.7rem' }}>
-                                4.33 major GPA / 4.2 cumulative GPA
+                                4.3/4.33 cumulative GPA
                             </Text>
                         </ListItem>
                     </List>
