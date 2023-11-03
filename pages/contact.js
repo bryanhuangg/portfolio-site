@@ -35,7 +35,7 @@ const Contact =()=> {
                     <Body>
                         <List>
                             <ListItem>
-                                <Link href="https://github.com/bhuang-dev" target="_blank">
+                                <Link href="https://github.com/bryanhuangg" target="_blank">
                                     <Button
                                         variant="ghost"
                                         colorScheme= "gray"
@@ -43,13 +43,13 @@ const Contact =()=> {
                                         fontSize="xl"
                                         fontWeight="lighter"
                                     >
-                                        /bhuang-dev
+                                        /bryanhuangg
                                     </Button>
                                 </Link>
                             </ListItem>
 
                             <ListItem>
-                                <Link href="https://www.linkedin.com/in/bhuang-dev/" target="_blank">
+                                <Link href="https://www.linkedin.com/in/bryanhuangg/" target="_blank">
                                     <Button
                                         variant="ghost"
                                         colorScheme= "gray"
@@ -57,7 +57,7 @@ const Contact =()=> {
                                         fontSize="xl"
                                         fontWeight="lighter"
                                     >
-                                        /bhuang-dev
+                                        /bryanhuangg
                                     </Button>
                                 </Link>
                             </ListItem>

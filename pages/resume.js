@@ -35,7 +35,7 @@ const Resume =()=> {
                     </PressStart>
                 </Box>
                 <Body style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
-                    <Link href="resume4.pdf" download type="application/pdf">
+                    <Link href="resume5.pdf" download type="application/pdf">
                         <Button
                             variant="ghost"
                             colorScheme= "gray"
