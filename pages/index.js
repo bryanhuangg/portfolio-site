@@ -140,7 +140,7 @@ const Page =()=> {
                             </ListItem>
 
                             <ListItem>
-                                <Link href="mailto:bryanhuang66@gmail.com" target="_blank">
+                                <Link href="mailto:bryanhuangg@gmail.com" target="_blank">
                                     <Button
                                         variant="ghost"
                                         colorScheme= "gray"
@@ -148,7 +148,7 @@ const Page =()=> {
                                         fontSize="lg"
                                         fontWeight="lighter"
                                     >
-                                        bryanhuang66@gmail.com
+                                        bryanhuangg@gmail.com
                                     </Button>
                                 </Link>
                             </ListItem>
