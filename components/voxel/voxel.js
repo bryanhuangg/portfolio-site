@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
-import { loadGLTF } from "../lib/model"
+import { loadGLTF } from "../../lib/model"
 import { VoxelSpinner, VoxelContainer } from "./voxel-loader";
 
 function easeOut(x) {
