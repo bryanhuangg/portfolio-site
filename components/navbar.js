@@ -59,92 +59,25 @@ const ButtonFont = styled.span`
 
 
 const Navbar = props => {
-    const {path} = props
-    const githubImg = `/images/github${useColorModeValue('-dark', '-light3')}.png`
     return (
         <Box position="fixed"
              as="nav"
              w="100%"
-             bg={useColorModeValue('#e8effa', '#393646')}
-             style={{backdropFilter: 'blur(10px'}}
+             style={{backdropFilter: 'blur(10px)'}}
              zIndex={1}
              {...props}>
 
-            <Container display="flex"
-                       p={1}
-                       maxW="container.md"
-                       wrap="wrap"
-                       align="center"
-                       justify="space-between">
+            <Container display="flex" maxW="container.xxl" p={2.5} wrap="wrap" align="center" justify="space-between">
 
-                <Flex align="center" mr={8}>
+                <Flex align="center">
                     <Heading as = "h1" size = "lg" letterSpacing = {'tighter'}>
                         <Logo />
                     </Heading>
                 </Flex>
 
-                <Stack
-                    direction={{base:'column', md:'row'}}
-                    display={{base: 'none', md: 'flex'}}
-                    width={{base: 'full', md: 'auto'}}
-                    alignItems = "center"
-                    flexGrow={1}
-                    mt={{ base: -1}}
-                >
-                    <ButtonFont>
-                        <LinkItem href="/projects" path={path}>
-                            Projects
-                        </LinkItem>
-
-                        <LinkItem href="/resume" path={path}>
-                            Resume
-                        </LinkItem>
-
-                        <LinkItem href="/contact" path={path}>
-                            Contact
-                        </LinkItem>
-
-                        <LinkItem href="https://github.com/bhuang-dev/portfolio-site">
-                            <IoLogoGithub size={15} style={{ marginRight: '4px', verticalAlign: 'middle' }} />
-                            <Text style={{ display: 'flex', alignItems: 'center', marginTop: '5px' }}>
-                                Source
-                            </Text>
-                        </LinkItem>
-                    </ButtonFont>
-                </Stack>
 
                 <Box flex={1} align="right">
                     <ThemeToggle/>
-                    <Box ml={2} display={{base: 'inline-block', md:'none'}}>
-                        <Menu>
-                            <MenuButton as={IconButton} icon={<HamburgerIcon/>}
-                                variant = "none"
-                                aria-label = "Options"/>
-                            <MenuList>
-                                <ButtonFont>
-                                    <MenuItem as={MenuForwardLink} href = "/">
-                                        Home
-                                    </MenuItem>
-                                    <MenuItem as={MenuForwardLink} href = "/projects">
-                                        Projects
-                                    </MenuItem>
-                                    <MenuItem as={MenuForwardLink} href = "/resume">
-                                        Resume
-                                    </MenuItem>
-                                    <MenuItem as={MenuForwardLink} href = "/contact">
-                                        Contact
-                                    </MenuItem>
-                                    <MenuItem as={MenuForwardLink} href = "https://github.com/bhuang-dev/portfolio-site">
-                                        <IoLogoGithub size={15} style={{ marginRight: '4px', verticalAlign: 'middle' }} />
-                                        <Text style={{ display: 'flex', alignItems: 'center', marginTop: '5px' }}>
-                                            Source
-                                        </Text>
-                                    </MenuItem>
-                                </ButtonFont>
-                            </MenuList>
-                        </Menu>
-                    </Box>
-
                 </Box>
             </Container>
         </Box>

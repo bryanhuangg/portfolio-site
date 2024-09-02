@@ -3,7 +3,6 @@ import Layout from '../components/layouts/main'
 import "@fontsource/press-start-2p"
 import "@fontsource/vt323"
 import theme from '../lib/theme'
-import styled from "@emotion/styled";
 
 
 const Website = ({Component, pageProps, router}) => {

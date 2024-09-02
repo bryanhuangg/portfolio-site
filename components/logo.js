@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Text, useColorModeValue} from "@chakra-ui/react";
+import { Text, useColorModeValue } from "@chakra-ui/react";
 import styled from '@emotion/styled'
 
 const LogoBox = styled.span`
@@ -19,22 +19,10 @@ const LogoBox = styled.span`
 `
 
 const Logo = () => {
-    const dinoImg = `/images/dino${useColorModeValue('-dark3', '-light2')}.png`
     return (
-        <Link legacyBehavior href="/">
-            <a>
-                <LogoBox>
-                    <Image src={dinoImg} width={30} height={30} alt="logo" />
-                    <Text
-                        color = {useColorModeValue('#212A3E', 'white.800')}
-                        ml={3}
-                        mt={1.5}>
-                        BRYAN HUANG
-                    </Text>
-                </LogoBox>
-            </a>
-
-        </Link>
+        <LogoBox>
+            <Image src={'/images/favicon.png'} width={30} height={30} alt="logo" />
+        </LogoBox>
     );
 }
 

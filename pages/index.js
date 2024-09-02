@@ -29,6 +29,7 @@ const Name = styled.span`
   font-weight: bold;
   as: h2
 `
+
 const Page =()=> {
     return (
         <Container>

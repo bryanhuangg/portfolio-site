@@ -2,12 +2,12 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { loadGLTF } from "../lib/model"
-import { VoxelSpinner, VoxelContainer } from "./dino-voxel-loader";
+import { VoxelSpinner, VoxelContainer } from "./voxel-loader";
 
 function easeOut(x) {
     return Math.sqrt(1 - Math.pow(x - 1, 3))
 }
-const DinoVoxel = () => {
+const Voxel = () => {
     const refContainer = useRef()
     const [loading, setLoading] = useState(true)
     const refRenderer = useRef()
@@ -32,8 +32,6 @@ const DinoVoxel = () => {
     }, [])
 
 
-
-
     useEffect(() => {
         const { current: container } = refContainer
         if (container) {
@@ -52,11 +50,11 @@ const DinoVoxel = () => {
             refRenderer.current = renderer
             const scene = new THREE.Scene()
 
-            const target = new THREE.Vector3(-0.5, 1.2, 0)
+            const target = new THREE.Vector3(-1, 1.7, 0)
             const initialCameraPosition = new THREE.Vector3(
-                -30 * Math.sin(0.2 * Math.PI),
-                -105,
-                -30 * Math.cos(0.2 * Math.PI)
+                -10 * Math.sin(0.1 * Math.PI),
+                -20,
+                -10 * Math.cos(0.1 * Math.PI)
             )
 
             // 640 -> 240
@@ -64,7 +62,7 @@ const DinoVoxel = () => {
 
             const aspectRatio = container.clientWidth / container.clientHeight;
 
-            const scale = scH * 0.004
+            const scale = scH * 0.0175
             const camera = new THREE.OrthographicCamera(
                 -scale * aspectRatio,
                 scale * aspectRatio,
@@ -85,7 +83,7 @@ const DinoVoxel = () => {
             controls.autoRotateSpeed = -2;
             controls.target = target
 
-            loadGLTF(scene, '/dino-voxel2.glb', {
+            loadGLTF(scene, '/voxel.glb', {
                 receiveShadow: false,
                 castShadow: false
             }).then(() => {
@@ -133,8 +131,10 @@ const DinoVoxel = () => {
     }, [handleWindowResize])
 
     return (
-        <VoxelContainer ref={refContainer}>{loading && <VoxelSpinner />}</VoxelContainer>
+        <VoxelContainer ref={refContainer}>
+            {loading && <VoxelSpinner />}
+        </VoxelContainer>
     )
 }
 
-export default DinoVoxel
+export default Voxel
