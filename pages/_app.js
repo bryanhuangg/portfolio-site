@@ -1,7 +1,6 @@
-import { ChakraProvider} from "@chakra-ui/react";
+import { ChakraProvider} from "@chakra-ui/react"
 import Layout from '../components/layouts/main'
-import "@fontsource/press-start-2p"
-import "@fontsource/vt323"
+import '@fontsource-variable/raleway'
 import theme from '../lib/theme'
 
 

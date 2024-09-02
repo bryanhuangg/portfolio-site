@@ -4,9 +4,6 @@ import { Text, useColorModeValue } from "@chakra-ui/react";
 import styled from '@emotion/styled'
 
 const LogoBox = styled.span`
-    font-family: "Press Start 2P";
-    font-weight: normal;
-    font-size: 12px;
     display: inline-flex;
     align-items: center;
     height: 30px;
@@ -14,7 +11,7 @@ const LogoBox = styled.span`
     padding: 5px;
 
     &:hover img {
-    transform: rotate(-10deg);
+    transform: rotate(-15deg);
     }
 `
 
