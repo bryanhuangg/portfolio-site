@@ -80,7 +80,7 @@ const Voxel = () => {
 
             const controls = new OrbitControls(camera, renderer.domElement)
             controls.autoRotate = true
-            controls.autoRotateSpeed = -2;
+            controls.autoRotateSpeed = -5;
             controls.target = target
 
             loadGLTF(scene, '/voxel.glb', {
@@ -100,7 +100,7 @@ const Voxel = () => {
 
                 if (frame <= 100) {
                     const p = initialCameraPosition
-                    const rotSpeed = -easeOut(frame / 120) * Math.PI * 17
+                    const rotSpeed = -easeOut(frame / 120) * Math.PI * 10 
 
                     camera.position.y = 5
                     camera.position.x =
