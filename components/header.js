@@ -1,33 +1,45 @@
 import Logo from './logo'
+import * as React from 'react';
 import {
     Container,
     Box,
     Heading,
     Flex,
 } from '@chakra-ui/react'
-import ThemeToggle from "./theme-toggle";
+import { DarkModeSwitch } from 'react-toggle-dark-mode';
+import { useColorMode, useColorModeValue } from '@chakra-ui/react'
 
 
 const Header = props => {
+    const { toggleColorMode } = useColorMode();
+    const [isDarkMode, setDarkMode] = React.useState(false);
+
+    const toggleDarkMode = (checked) => {
+        setDarkMode((prev) => {
+            toggleColorMode();
+            return checked;
+        });
+    };
+
     return (
         <Box position="fixed"
-             as="nav"
-             w="100%"
-             style={{backdropFilter: 'blur(10px)'}}
-             zIndex={1}
-             {...props}>
+            as="nav"
+            w="100%"
+            style={{ backdropFilter: 'blur(10px)' }}
+            zIndex={1}
+            {...props}>
 
             <Container display="flex" maxW="container.xxl" p={2.5} wrap="wrap" align="center" justify="space-between">
 
                 <Flex align="center">
-                    <Heading as = "h1" size = "lg" letterSpacing = {'tighter'}>
+                    <Heading as="h1" size="lg" letterSpacing={'tighter'}>
                         <Logo />
                     </Heading>
                 </Flex>
 
 
                 <Box flex={1} align="right">
-                    <ThemeToggle/>
+                    <DarkModeSwitch onChange={toggleDarkMode} checked={isDarkMode} />
                 </Box>
             </Container>
         </Box>
