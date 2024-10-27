@@ -12,14 +12,7 @@ import { useColorMode, useColorModeValue } from '@chakra-ui/react'
 
 const Header = props => {
     const { toggleColorMode } = useColorMode();
-    const [isDarkMode, setDarkMode] = React.useState(false);
-
-    const toggleDarkMode = (checked) => {
-        setDarkMode((prev) => {
-            toggleColorMode();
-            return checked;
-        });
-    };
+    const isDarkMode = useColorModeValue(false, true); 
 
     return (
         <Box position="fixed"
@@ -39,7 +32,7 @@ const Header = props => {
 
 
                 <Box flex={1} align="right">
-                    <DarkModeSwitch onChange={toggleDarkMode} checked={isDarkMode} />
+                    <DarkModeSwitch onChange={toggleColorMode} checked={isDarkMode} />
                 </Box>
             </Container>
         </Box>
