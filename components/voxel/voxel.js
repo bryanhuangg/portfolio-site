@@ -7,30 +7,34 @@ import { VoxelSpinner, VoxelContainer } from "./voxel-loader";
 function easeOut(x) {
     return Math.sqrt(1 - Math.pow(x - 1, 3))
 }
+
 const Voxel = () => {
     const refContainer = useRef()
     const [loading, setLoading] = useState(true)
     const refRenderer = useRef()
+    const refCamera = useRef()
+
     const handleWindowResize = useCallback(() => {
         const { current: renderer } = refRenderer
         const { current: container } = refContainer
-        if (container && renderer) {
+        const { current: camera } = refCamera
+
+        if (container && renderer && camera) {
             const scW = container.clientWidth
             const scH = container.clientHeight
+
+            renderer.setPixelRatio(window.devicePixelRatio)
             renderer.setSize(scW, scH)
             const aspectRatio = scW / scH
-            const scale = scH * 0.004
-            const camera = renderer.camera
-            if (camera) {
-                camera.left = -scale * aspectRatio
-                camera.right = scale * aspectRatio
-                camera.top = scale
-                camera.bottom = -scale
-                camera.updateProjectionMatrix()
-            }
+            const scale = scH * 0.0175
+
+            camera.left = -scale * aspectRatio
+            camera.right = scale * aspectRatio
+            camera.top = scale
+            camera.bottom = -scale
+            camera.updateProjectionMatrix()
         }
     }, [])
-
 
     useEffect(() => {
         const { current: container } = refContainer
@@ -48,21 +52,17 @@ const Voxel = () => {
             renderer.domElement.style.objectFit = 'contain'
             container.appendChild(renderer.domElement)
             refRenderer.current = renderer
+            
             const scene = new THREE.Scene()
-
             const target = new THREE.Vector3(-1, 1.7, 0)
             const initialCameraPosition = new THREE.Vector3(
                 -10 * Math.sin(0.1 * Math.PI),
                 -20,
                 -10 * Math.cos(0.1 * Math.PI)
             )
-
-            // 640 -> 240
-            // 8   -> 6
-
-            const aspectRatio = container.clientWidth / container.clientHeight;
-
+            const aspectRatio = container.clientWidth / container.clientHeight
             const scale = scH * 0.0175
+
             const camera = new THREE.OrthographicCamera(
                 -scale * aspectRatio,
                 scale * aspectRatio,
@@ -70,17 +70,17 @@ const Voxel = () => {
                 -scale,
                 0.03,
                 50000
-            );
-
+            )
             camera.position.copy(initialCameraPosition)
             camera.lookAt(target)
+            refCamera.current = camera
 
             const ambientLight = new THREE.AmbientLight(0xcccccc, 1)
             scene.add(ambientLight)
 
             const controls = new OrbitControls(camera, renderer.domElement)
             controls.autoRotate = true
-            controls.autoRotateSpeed = -5;
+            controls.autoRotateSpeed = -5
             controls.target = target
 
             loadGLTF(scene, '/voxel.glb', {
