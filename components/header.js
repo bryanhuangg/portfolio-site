@@ -7,12 +7,14 @@ import {
     Flex,
 } from '@chakra-ui/react'
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
-import { useColorMode, useColorModeValue } from '@chakra-ui/react'
+import { useTheme, useColorMode, useColorModeValue } from '@chakra-ui/react'
 
 
 const Header = props => {
+    const theme = useTheme();
+    const isDarkMode = useColorModeValue(false, true);
     const { toggleColorMode } = useColorMode();
-    const isDarkMode = useColorModeValue(false, true); 
+  
 
     return (
         <Box position="fixed"
@@ -24,15 +26,13 @@ const Header = props => {
 
             <Container display="flex" maxW="container.xxl" p={2.5} wrap="wrap" align="center" justify="space-between">
 
-                <Flex align="center">
-                    <Heading as="h1" size="lg" letterSpacing={'tighter'}>
-                        <Logo />
-                    </Heading>
+                <Flex align="center" alignItems="center">
+                    <Logo />
                 </Flex>
 
 
-                <Box flex={1} align="right">
-                    <DarkModeSwitch onChange={toggleColorMode} checked={isDarkMode} />
+                <Box align="right" alignItems="center" flex={1} >
+                    <DarkModeSwitch sunColor={theme.colors.darkbg} moonColor={theme.colors.lightbg} onChange={toggleColorMode} checked={isDarkMode} width={25} height={25} />
                 </Box>
             </Container>
         </Box>
