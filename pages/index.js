@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 import SectionTransition from "../components/section-transition";
 
 
-
 const Title = styled.span`
   font-size: 14px;
   font-weight: 400;
