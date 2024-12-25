@@ -52,38 +52,36 @@ const Banner = () => {
                     top={`${boxBottom - 100}px`}
                     zIndex="1"
                 />
+                
+                <Box display={{ md: 'flex' }} style={{ marginTop: `50px` }}>
+                    <Box flexGrow={1}>
 
-                <SectionTransition delay={0}>
-                    <Box display={{ md: 'flex' }} style={{ marginTop: `50px` }}>
-                        <Box flexGrow={1}>
+                        <Text textStyle={'title'}>
+                            Bryan Huang
+                        </Text>
 
-                            <Text textStyle={'title'}>
-                                Bryan Huang
-                            </Text>
+                        <Text textStyle={'subtitle'}>
+                            Computer Science and Economics Student at UBC
+                        </Text>
 
-                            <Text textStyle={'subtitle'}>
-                                Computer Science and Economics Student at UBC
-                            </Text>
+                        <Text textStyle={'subtitle'}>
+                            ex-Software Engineer at MDA Space
+                        </Text>
 
-                            <Text textStyle={'subtitle'}>
-                                ex-Software Engineer at MDA Space
-                            </Text>
-
-                        </Box>
-
-
-                        <Button leftIcon={<IoPersonAddSharp />} color={'white'} bg={'blue.300'} borderRadius={'13px'} onClick={onOpen}>
-                            <Text textStyle={'subtitle'} color={'white'} fontWeight={500}>
-                                Connect
-                            </Text>
-                        </Button>
                     </Box>
 
 
-                    <Navbar />
+                    <Button leftIcon={<IoPersonAddSharp />} color={'white'} bg={'blue.300'} borderRadius={'13px'} onClick={onOpen}>
+                        <Text textStyle={'subtitle'} color={'white'} fontWeight={500}>
+                            Connect
+                        </Text>
+                    </Button>
+                </Box>
 
 
-                </SectionTransition>
+                <Navbar />
+
+
             </Container>
 
             {/* Contact Modal */}

@@ -4,24 +4,24 @@ import { Box, Button, Grid, Text } from "@chakra-ui/react"
 
 const Navbar = () => {
     return (
-        <Box borderBottom="1px" borderColor="gray.200" mt={4} p={2}>
+        <Box borderBottom="1px" borderColor="gray.200" mt={4} p={1}>
             <Grid templateColumns="repeat(4, 1fr)" gap="6">
-                <Button>
+                <Button variant="ghost">
                     <Text textStyle={'subtitle'}>
                         Home
                     </Text>
                 </Button>
-                <Button>
+                <Button variant="ghost">
                     <Text textStyle={'subtitle'}>
                         Timeline
                     </Text>
                 </Button>
-                <Button>
+                <Button variant="ghost">
                     <Text textStyle={'subtitle'}>
                         Work
                     </Text>
                 </Button>
-                <Button>
+                <Button variant="ghost">
                     <Text textStyle={'subtitle'}>
                         Posts
                     </Text>
