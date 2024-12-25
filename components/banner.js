@@ -2,7 +2,9 @@ import VoxelLoader from './voxel/voxel-loader'
 import dynamic from "next/dynamic";
 import React, { useRef, useEffect, useState } from 'react';
 import { Button, Box, Container, Text } from '@chakra-ui/react';
-import SectionTransition from "../components/section-transition";
+import SectionTransition from "./section-transition";
+import Navbar from "./navbar";
+
 
 const LazyVoxel = dynamic(() => import('./voxel/voxel'), {
     ssr: false,
@@ -37,8 +39,6 @@ const Banner = () => {
             </div>
 
             <Container>
-
-                {/* Profile Picture */}
                 <Box
                     width="100px"
                     height="100px"
@@ -68,14 +68,18 @@ const Banner = () => {
                         </Box>
 
 
-                        <Button bg={'blue.400'} mt={4} borderRadius={'13px'}>
+                        <Button bg={'blue.400'} borderRadius={'13px'}>
                             <Text textStyle={'subtitle'} color={'white'} fontWeight={'bold'}>
                                 Connect
                             </Text>
                         </Button>
                     </Box>
-                </SectionTransition>
 
+
+                    <Navbar />
+
+
+                </SectionTransition>
             </Container>
         </Container >
     );
