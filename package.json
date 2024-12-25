@@ -40,6 +40,6 @@
     "eslint": "^8.40.0",
     "eslint-config-next": "^13.4.1",
     "prettier": "^2.8.8",
-    "react-scripts": "^5.0.1"
+    "react-scripts": "^3.0.1"
   }
 }

@@ -1,8 +1,7 @@
 import VoxelLoader from './voxel/voxel-loader'
 import dynamic from "next/dynamic";
 import React, { useRef, useEffect, useState } from 'react';
-import { Button, Box, Container, Text, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, useColorModeValue, useTheme, List, ListItem, Link } from '@chakra-ui/react';
-import SectionTransition from "./section-transition";
+import { Avatar, Button, Box, Container, Text, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, useColorModeValue, useTheme, List, ListItem, Link } from '@chakra-ui/react';
 import Navbar from "./navbar";
 import { IoPersonAddSharp, IoLogoGithub, IoLogoLinkedin, IoMail } from "react-icons/io5";
 
@@ -43,16 +42,18 @@ const Banner = () => {
             </div>
 
             <Container>
-                <Box
-                    width="100px"
-                    height="100px"
-                    borderRadius="50%"
-                    backgroundColor="blue.900"
+                <Avatar
+                    width="120px"
+                    height="120px"
+                    color="white"
                     position="absolute"
-                    top={`${boxBottom - 100}px`}
-                    zIndex="1"
+                    top={`${boxBottom - 120}px`}
+                    src="/images/pfp.jpg"
+                    objectFit="cover"
+                    borderRadius="full"
+                    boxShadow={`0 0 0 4px ${useColorModeValue(theme.colors.bgLight, theme.colors.bgDark)}`}
                 />
-                
+
                 <Box display={{ md: 'flex' }} style={{ marginTop: `50px` }}>
                     <Box flexGrow={1}>
 

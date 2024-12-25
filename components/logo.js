@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import styled from '@emotion/styled'
+import { useRouter } from 'next/router';
 
 const LogoBox = styled.span`
     display: inline-flex;
@@ -14,12 +15,9 @@ const LogoBox = styled.span`
 `
 
 const Logo = () => {
-    const handleClick = () => {
-        window.location.href = '/';
-    };
-
+    const router = useRouter();
     return (
-        <LogoBox onClick={handleClick}>
+        <LogoBox onClick={() => router.push('/')}>
             <Image src={'/images/favicon.png'} width={30} height={30} alt="logo"/>
         </LogoBox>
     );
