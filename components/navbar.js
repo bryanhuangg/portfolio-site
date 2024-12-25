@@ -6,7 +6,7 @@ import { Box, Button, Grid, Text } from "@chakra-ui/react"
 const Navbar = () => {
     const router = useRouter();
     return (
-        <Box borderBottom="1px" borderColor="gray.200" mt={4} p={1}>
+        <Box borderBottom="1px" borderColor="gray.200" mt={3} p={1} mb={3}>
             <Grid templateColumns="repeat(4, 1fr)" gap="6">
 
                 <Button variant="ghost" onClick={() => router.push('/')}>
@@ -23,7 +23,7 @@ const Navbar = () => {
 
                 <Button variant="ghost" onClick={() => router.push('/works')}>
                     <Text textStyle={'subtitle'}>
-                        Work
+                        Works
                     </Text>
                 </Button>
 

@@ -17,7 +17,7 @@ const Main = ({children, router}) => {
 
             <Header/>
 
-            <Box pt={'40px'} centerContent>
+            <Box pt={'40px'} centercontent="true" >
                 <Banner/>
                 {children}
             </Box>
