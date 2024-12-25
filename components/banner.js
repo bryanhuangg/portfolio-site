@@ -25,12 +25,21 @@ const Banner = () => {
     const lazyVoxelRef = useRef(null);
     const [boxBottom, setBoxBottom] = useState(0);
 
-    useEffect(() => {
+    const handleWindowResize = () => {
         if (lazyVoxelRef.current) {
             const voxelRect = lazyVoxelRef.current.getBoundingClientRect();
-            setBoxBottom(voxelRect.bottom + 50); // Adjust the offset as needed
+            setBoxBottom(voxelRect.bottom + 50);
         }
+    };
+
+    useEffect(() => {
+        window.addEventListener('resize', handleWindowResize);
+        handleWindowResize();
+        return () => {
+            window.removeEventListener('resize', handleWindowResize);
+        };
     }, []);
+
 
     return (
         <Container maxW='3xl'>
@@ -62,7 +71,7 @@ const Banner = () => {
                                     Computer Science and Economics Student at UBC
                                 </Text>
                                 <Text color={useColorModeValue('#212A3E', '#F4EEE0')}>
-                                    Software Engineer at MDA Space
+                                    ex-Software Engineer at MDA Space
                                 </Text>
                             </Subtitle>
                         </Box>
