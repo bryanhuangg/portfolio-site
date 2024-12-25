@@ -12,15 +12,29 @@ import {
     useColorModeValue,
     List,
     ListItem,
-
+    useToast,
+    useTheme,
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalBody,
+    ModalFooter,
+    ModalCloseButton,
+    useDisclosure
 } from '@chakra-ui/react'
 import SectionTransition from "../components/section-transition";
 import UserProfile from "../components/user-profile";
 
 import { TbPinnedFilled } from "react-icons/tb";
 import { FaGithub } from "react-icons/fa";
+import { FaFile } from "react-icons/fa6";
 
 const Page = () => {
+    const toast = useToast()
+    const theme = useTheme();
+    const { isOpen, onOpen, onClose } = useDisclosure()
+
     return (
         <Container>
             <SectionTransition delay={0}>
@@ -55,7 +69,7 @@ const Page = () => {
             <SectionTransition delay={0.1}>
                 <Card>
                     <CardBody>
-                        <UserProfile time={'10 hours ago'}/>
+                        <UserProfile time={'10 hours ago'} />
                         <Text textStyle={'subtitle'} mt={3} color={useColorModeValue('#394867', '#f2f2f0')}>
                             Resume
                         </Text>
@@ -66,10 +80,31 @@ const Page = () => {
 
                     <CardFooter>
                         <ButtonGroup spacing='2'>
-                            <Button variant='solid' size={'sm'}>
+                            <Button
+                                variant='solid'
+                                size={'sm'}
+                                onClick={onOpen}
+                            >
                                 View
                             </Button>
-                            <Button variant='ghost' size={'sm'}>
+                            <Button
+                                as="a"
+                                href="/Resume.pdf"
+                                download
+                                variant='ghost'
+                                size={'sm'}
+                                onClick={() => {
+                                    toast({
+                                        description: 'Resume downloaded',
+                                        status: 'success',
+                                        duration: 3000,
+                                        isClosable: true,
+                                        position: 'bottom-right',
+                                        variant: 'subtle',
+                                        colorScheme: 'blue',
+                                    })
+                                }}
+                            >
                                 Download
                             </Button>
                         </ButtonGroup>
@@ -91,7 +126,7 @@ const Page = () => {
 
                     <CardFooter>
                         <Button
-                            leftIcon={<FaGithub size={'16px'}/>}
+                            leftIcon={<FaGithub size={'16px'} />}
                             variant='solid'
                             size={'sm'}
                             alignContent={'center'}
@@ -102,6 +137,33 @@ const Page = () => {
                     </CardFooter>
                 </Card>
             </SectionTransition>
+
+
+            <Modal isOpen={isOpen} onClose={onClose} size="xl">
+                <ModalOverlay />
+                <ModalContent bg={useColorModeValue(theme.colors.bgLight, theme.colors.bgDark)}>
+                    <ModalHeader>
+                        <Box display="flex" alignItems="center">
+                            <FaFile color={useColorModeValue(theme.colors.customLight, theme.colors.customDark)} />
+                            <Text textStyle={'title'} ml={2}>
+                                Resume
+                            </Text>
+                        </Box>
+                        <Text textStyle={'subtitle'}>
+                            View my full experience in the CV timeline section
+                        </Text>
+                    </ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody>
+                        <iframe
+                            src="/Resume.pdf"
+                            style={{ width: '100%', height: '75vh', borderRadius: '0.375rem' }}
+                        />
+                    </ModalBody>
+                    <ModalFooter>
+                    </ModalFooter>
+                </ModalContent>
+            </Modal>
         </Container>
     )
 }
