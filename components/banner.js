@@ -1,20 +1,8 @@
 import VoxelLoader from './voxel/voxel-loader'
 import dynamic from "next/dynamic";
 import React, { useRef, useEffect, useState } from 'react';
-import { Box, Container, Text, useColorModeValue } from '@chakra-ui/react';
-
+import { Button, Box, Container, Text } from '@chakra-ui/react';
 import SectionTransition from "../components/section-transition";
-import styled from "@emotion/styled";
-
-const Subtitle = styled.span`
-  font-size: 14px;
-  font-weight: 400;
-`
-const Name = styled.span`
-  font-size: 20px;
-  font-weight: bold;
-  as: h2
-`
 
 const LazyVoxel = dynamic(() => import('./voxel/voxel'), {
     ssr: false,
@@ -43,11 +31,14 @@ const Banner = () => {
 
     return (
         <Container maxW='3xl'>
+            {/* Voxel Banner */}
             <div ref={lazyVoxelRef}>
                 <LazyVoxel />
             </div>
 
             <Container>
+
+                {/* Profile Picture */}
                 <Box
                     width="100px"
                     height="100px"
@@ -61,22 +52,30 @@ const Banner = () => {
                 <SectionTransition delay={0}>
                     <Box display={{ md: 'flex' }} style={{ marginTop: `50px` }}>
                         <Box flexGrow={1}>
-                            <Name>
-                                <Text color={useColorModeValue('#394867', '#f2f2f0')}>
-                                    Bryan Huang
-                                </Text>
-                            </Name>
-                            <Subtitle>
-                                <Text color={useColorModeValue('#212A3E', '#F4EEE0')}>
-                                    Computer Science and Economics Student at UBC
-                                </Text>
-                                <Text color={useColorModeValue('#212A3E', '#F4EEE0')}>
-                                    ex-Software Engineer at MDA Space
-                                </Text>
-                            </Subtitle>
+
+                            <Text textStyle={'name'}>
+                                Bryan Huang
+                            </Text>
+
+                            <Text textStyle={'subtitle'}>
+                                Computer Science and Economics Student at UBC
+                            </Text>
+
+                            <Text textStyle={'subtitle'}>
+                                ex-Software Engineer at MDA Space
+                            </Text>
+
                         </Box>
+
+
+                        <Button bg={'blue.400'} mt={4} borderRadius={'13px'}>
+                            <Text textStyle={'subtitle'} color={'white'} fontWeight={'bold'}>
+                                Connect
+                            </Text>
+                        </Button>
                     </Box>
                 </SectionTransition>
+
             </Container>
         </Container >
     );
