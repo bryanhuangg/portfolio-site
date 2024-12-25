@@ -63,16 +63,13 @@ const Banner = () => {
 
                         <Text textStyle={'subtitle'}>
                             Computer Science and Economics Student at UBC
-                        </Text>
-
-                        <Text textStyle={'subtitle'}>
+                            <br />
                             ex-Software Engineer at MDA Space
                         </Text>
-
                     </Box>
 
 
-                    <Button leftIcon={<IoPersonAddSharp />} color={'white'} bg={'blue.300'} borderRadius={'13px'} onClick={onOpen}>
+                    <Button leftIcon={<IoPersonAddSharp />} color={'white'} bg={'blue.300'} borderRadius={'13px'} onClick={onOpen} mt={2}>
                         <Text textStyle={'subtitle'} color={'white'} fontWeight={500}>
                             Connect
                         </Text>
