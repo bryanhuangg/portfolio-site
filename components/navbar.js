@@ -11,7 +11,7 @@ const Navbar = () => {
 
                 <Button variant="ghost" onClick={() => router.push('/')}>
                     <Text textStyle={'subtitle'}>
-                        Home
+                        Posts
                     </Text>
                 </Button>
 
@@ -27,9 +27,9 @@ const Navbar = () => {
                     </Text>
                 </Button>
 
-                <Button variant="ghost" onClick={() => router.push('/posts')}>
+                <Button variant="ghost" onClick={() => router.push('/highlights')}>
                     <Text textStyle={'subtitle'}>
-                        Posts
+                        Highlights
                     </Text>
                 </Button>
             </Grid>

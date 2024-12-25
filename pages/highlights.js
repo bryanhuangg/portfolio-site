@@ -20,7 +20,7 @@ const Page = () => {
                 <Heading as="h3" marginTop={10} >
                     <Title>
                         <Text color = {useColorModeValue('#394867', '#f2f2f0')}>
-                            Posts
+                            Highlights
                         </Text>
                     </Title>
                 </Heading>
