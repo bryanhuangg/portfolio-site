@@ -15,6 +15,7 @@ const Page = () => {
 
                 <VerticalTimeline lineColor={useColorModeValue('#394867', '#f2f2f0')} layout='2-columns'>
 
+                    {/* MDA Space */}
                     <VerticalTimelineElement
                         className="vertical-timeline-element"
                         contentStyle={{ background: useColorModeValue('#404258', '#F1F6F9') }}
@@ -53,11 +54,11 @@ const Page = () => {
                     >
                         <Text textStyle={'subtitle'} fontSize={'14px'} color={useColorModeValue('#f2f2f0', '#394867')}>
                             <b style={{ marginBottom: '-5px', display: 'block' }}>Web Designer</b>
-                            <Link href='https://mda.space/' target="_blank" style={{ display: 'inline-block' }}>VSE at UBC</Link>
+                            <Link href='https://economics.ubc.ca/' target="_blank" style={{ display: 'inline-block' }}>VSE at UBC</Link>
                         </Text>
 
                         <Text textStyle={'text'} fontSize={'12px'} color={useColorModeValue('#f2f2f0', '#394867')}>
-                        Contracted to build a WordPress website for the Cities in Motion Lab
+                        Contracted to design and build a WordPress website for the Cities in Motion Lab
                             <br />
                             <Button
                                 variant={'solid'}
