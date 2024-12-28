@@ -51,7 +51,7 @@ const Page = () => {
                             About Me
                         </Text>
 
-                        <Text textStyle={'text'} color={useColorModeValue('#212A3E', '#F4EEE0')} mt={1}>
+                        <Text textStyle={'text'} mt={1}>
                             Hello there, I'm Bryan! Currently, I am a student at the University of British Columbia studying
                             Computer Science as well as Economics. My passion for technology started at a young age,
                             and I've been fascinated by how the power of software is able to change the world ever since.
@@ -70,7 +70,7 @@ const Page = () => {
                         <Text textStyle={'subtitle'} mt={3} color={useColorModeValue('#394867', '#f2f2f0')}>
                             Resume
                         </Text>
-                        <Text textStyle={'text'} color={useColorModeValue('#212A3E', '#F4EEE0')} mt={1}>
+                        <Text textStyle={'text'} mt={1}>
                             View or download my resume to learn more about my work experience, education, and skills.
                         </Text>
                     </CardBody>
@@ -116,7 +116,7 @@ const Page = () => {
                         <Text textStyle={'subtitle'} mt={3} color={useColorModeValue('#394867', '#f2f2f0')}>
                             Website Source Code
                         </Text>
-                        <Text textStyle={'text'} color={useColorModeValue('#212A3E', '#F4EEE0')} mt={1}>
+                        <Text textStyle={'text'} mt={1}>
                             See how I built this website by checking out the source code in my GitHub repository.
                         </Text>
                     </CardBody>
