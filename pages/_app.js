@@ -1,8 +1,9 @@
-import { ChakraProvider} from "@chakra-ui/react"
-import Layout from '../components/layouts/main'
 import '@fontsource-variable/raleway'
-import theme from '../lib/theme'
+import '../css/timeline-custom.css'
 
+import { ChakraProvider } from "@chakra-ui/react"
+import Layout from '../components/layouts/main'
+import theme from '../lib/theme'
 
 const Website = ({Component, pageProps, router}) => {
     return (

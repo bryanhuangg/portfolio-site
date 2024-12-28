@@ -1,14 +1,9 @@
-import { Container, Box, Heading, Text, useColorModeValue, List, ListItem, Button } from '@chakra-ui/react'
-import styled from "@emotion/styled";
-import SectionTransition from "../components/section-transition";
+import { Box, Button, Container, Heading, List, ListItem, Text, useColorModeValue } from '@chakra-ui/react'
 
+import SectionTransition from "../components/section-transition";
+import styled from "@emotion/styled";
 
 const Title = styled.span`
-  font-size: 14px;
-  font-weight: 400;
-`
-
-const Body = styled.span`
   font-size: 14px;
   font-weight: 400;
 `
