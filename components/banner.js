@@ -1,10 +1,11 @@
-import VoxelLoader from './voxel/voxel-loader'
-import dynamic from "next/dynamic";
-import React, { useRef, useEffect, useState } from 'react';
-import { Avatar, Button, Box, Container, Text, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, useColorModeValue, useTheme, List, ListItem, Link } from '@chakra-ui/react';
-import Navbar from "./navbar";
-import { IoPersonAddSharp, IoLogoGithub, IoLogoLinkedin, IoMail } from "react-icons/io5";
+import { Avatar, Box, Button, Container, Link, List, ListItem, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text, useColorModeValue, useDisclosure, useTheme } from '@chakra-ui/react';
+import { IoLogoGithub, IoLogoLinkedin, IoMail, IoPersonAddSharp } from "react-icons/io5";
+import React, { useEffect, useRef, useState } from 'react';
 
+import Navbar from "./navbar";
+import VoxelLoader from './voxel/voxel-loader';
+import dynamic from "next/dynamic";
+import { useRouter } from 'next/router';
 
 const LazyVoxel = dynamic(() => import('./voxel/voxel'), {
     ssr: false,
@@ -13,23 +14,31 @@ const LazyVoxel = dynamic(() => import('./voxel/voxel'), {
 
 const Banner = () => {
     const theme = useTheme();
+    const router = useRouter();
 
     const lazyVoxelRef = useRef(null);
-    const [boxBottom, setBoxBottom] = useState(0);
+    const [avatarTop, setAvatarTop] = useState(0);
+    const [isAvatarVisible, setIsAvatarVisible] = useState(false);
     const { isOpen, onOpen, onClose } = useDisclosure();
 
-    const handleWindowResize = () => {
-        if (lazyVoxelRef.current) {
-            const voxelRect = lazyVoxelRef.current.getBoundingClientRect();
-            setBoxBottom(voxelRect.bottom + 50);
-        }
-    };
-
     useEffect(() => {
-        window.addEventListener('resize', handleWindowResize);
-        handleWindowResize();
+        const updateAvatarPosition = () => {
+            if (lazyVoxelRef.current) {
+                const rect = lazyVoxelRef.current.getBoundingClientRect();
+                const scrollY = window.scrollY || window.pageYOffset;
+                const absoluteBottom = rect.bottom + scrollY;
+                setAvatarTop(absoluteBottom - 75);
+                setIsAvatarVisible(true);
+            }
+        };
+    
+        updateAvatarPosition();
+        window.addEventListener('scroll', updateAvatarPosition);
+        router.events.on('routeChangeComplete', updateAvatarPosition);
+    
         return () => {
-            window.removeEventListener('resize', handleWindowResize);
+            window.removeEventListener('scroll', updateAvatarPosition);
+            router.events.off('routeChangeComplete', updateAvatarPosition);
         };
     }, []);
 
@@ -47,11 +56,13 @@ const Banner = () => {
                     height="120px"
                     color="white"
                     position="absolute"
-                    top={`${boxBottom - 120}px`}
+                    top={`${avatarTop}px`}
                     src="/images/pfp.jpg"
                     objectFit="cover"
                     borderRadius="full"
                     boxShadow={`0 0 0 4px ${useColorModeValue(theme.colors.bgLight, theme.colors.bgDark)}`}
+                    opacity={isAvatarVisible ? 1 : 0}
+                    transition="opacity 0.2s ease-in-out"
                 />
 
                 <Box display={{ md: 'flex' }} style={{ marginTop: `50px` }}>
