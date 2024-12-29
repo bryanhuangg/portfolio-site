@@ -83,6 +83,18 @@ const Voxel = () => {
             controls.autoRotateSpeed = -5
             controls.target = target
 
+            // Add cursor styles for controls
+            const canvas = renderer.domElement
+            canvas.style.cursor = 'pointer'
+
+            controls.addEventListener('start', () => {
+                canvas.style.cursor = 'grabbing'
+            })
+
+            controls.addEventListener('end', () => {
+                canvas.style.cursor = 'grab'
+            })
+
             loadGLTF(scene, '/voxel.glb', {
                 receiveShadow: false,
                 castShadow: false

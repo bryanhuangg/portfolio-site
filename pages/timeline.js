@@ -100,7 +100,7 @@ const Page = () => {
                     <TimelineEvent
                         date="Sep 2022 - Jul 2023"
                         logoSrc="/svg/hillhouse.svg"
-                        logoAlt="UBC Logo"
+                        logoAlt="Hillhouse Logo"
                         title="Private Tutor"
                         organization="Hillhouse Education"
                         organizationUrl="https://hillhouseeducation.com/"
@@ -121,11 +121,24 @@ const Page = () => {
 
                     />
 
+
+                    {/* Code Ninjas */}
+                    <TimelineEvent
+                        date="Jun 2021 - Sep 2022"
+                        logoSrc="/svg/codeninjas.svg"
+                        logoAlt="Code Ninjas Logo"
+                        title="Coding Instructor"
+                        organization="Code Ninjas"
+                        organizationUrl="https://www.codeninjas.com/"
+                        description="Introduced children between the ages of 7-14 to programming fundamentals through JavaScript, C++, and Lua."
+
+                    />
+
                 </VerticalTimeline>
 
 
                 <Container alignContent={'center'} justifyContent={'center'} display={'flex'} mt={3}>
-                    <Button variant='solid' size={'xs'} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}> Scroll to top </Button>
+                    <Button variant='solid' size={'xs'} onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}> Scroll back to top </Button>
                 </Container>
 
             </SectionTransition>
