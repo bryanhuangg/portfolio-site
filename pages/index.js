@@ -1,31 +1,31 @@
 import {
+    Box,
+    Button,
+    ButtonGroup,
     Card,
     CardBody,
     CardFooter,
     Container,
-    Box,
-    Button,
-    ButtonGroup,
     Flex,
+    Modal,
+    ModalBody,
+    ModalCloseButton,
+    ModalContent,
+    ModalFooter,
+    ModalHeader,
+    ModalOverlay,
     Text,
     useColorModeValue,
-    useToast,
+    useDisclosure,
     useTheme,
-    Modal,
-    ModalOverlay,
-    ModalContent,
-    ModalHeader,
-    ModalBody,
-    ModalFooter,
-    ModalCloseButton,
-    useDisclosure
+    useToast
 } from '@chakra-ui/react'
-import SectionTransition from "../components/section-transition";
-import UserProfile from "../components/user-profile";
 
-import { TbPinnedFilled } from "react-icons/tb";
-import { FaGithub } from "react-icons/fa";
 import { FaFile } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
+import SectionTransition from "../components/section-transition";
+import { TbPinnedFilled } from "react-icons/tb";
+import UserProfile from "../components/user-profile";
 
 const Page = () => {
     const toast = useToast()
@@ -40,14 +40,14 @@ const Page = () => {
                         <Flex align="center" mb={3}>
                             <UserProfile time={'2 days ago'} />
                             <Flex ml="auto" alignSelf="flex-start" alignItems="center">
-                                <TbPinnedFilled size={15} color={useColorModeValue('#394867', '#f2f2f0')} />
+                                <TbPinnedFilled size={15} color={useColorModeValue(theme.colors.customLight, theme.colors.customDark)} />
                                 <Text textStyle={'title'} ml={1} fontSize={10} fontWeight={400}>
                                     Pinned
                                 </Text>
                             </Flex>
                         </Flex>
 
-                        <Text textStyle={'subtitle'} color={useColorModeValue('#394867', '#f2f2f0')}>
+                        <Text textStyle={'subtitle'}>
                             About Me
                         </Text>
 
@@ -67,7 +67,7 @@ const Page = () => {
                 <Card>
                     <CardBody>
                         <UserProfile time={'10 hours ago'} />
-                        <Text textStyle={'subtitle'} mt={3} color={useColorModeValue('#394867', '#f2f2f0')}>
+                        <Text textStyle={'subtitle'} mt={3}>
                             Resume
                         </Text>
                         <Text textStyle={'text'} mt={1}>
@@ -113,7 +113,7 @@ const Page = () => {
                 <Card>
                     <CardBody>
                         <UserProfile time={'22 hours ago'} />
-                        <Text textStyle={'subtitle'} mt={3} color={useColorModeValue('#394867', '#f2f2f0')}>
+                        <Text textStyle={'subtitle'} mt={3}>
                             Website Source Code
                         </Text>
                         <Text textStyle={'text'} mt={1}>
