@@ -35,8 +35,8 @@ const TimelineEvent = ({
                     <Image
                         src={logoSrc}
                         alt={logoAlt}
-                        width={25}
-                        height={25}
+                        width={26}
+                        height={26}
                     />
                 </div>
             }

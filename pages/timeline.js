@@ -40,6 +40,17 @@ const Page = () => {
             <SectionTransition delay={0.1}>
 
                 <VerticalTimeline lineColor={useColorModeValue(theme.colors.customLight, theme.colors.customDark)} layout='2-columns'>
+                    {/* Tsinghua Exchange */}
+                    <TimelineEvent
+                        date="Feb 2025 - Jun 2025"
+                        logoSrc="/svg/tsinghua.svg"
+                        logoAlt="Tsinghua Logo"
+                        title="Exchange Student" 
+                        organization="Tsinghua University"
+                        organizationUrl="https://www.tsinghua.edu.cn/"
+                        description="CLIC Scholarship"
+                    />
+
 
                     {/* MDA Space */}
                     <TimelineEvent
