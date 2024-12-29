@@ -224,7 +224,7 @@
 
 
 /* One-column dark mode */
-@media (max-width: 1169px) {
+@media (max-width: 700px) {
     [data-theme="light"] .vertical-timeline-element-content .vertical-timeline-element-date {
         color: var(--timeline-date-color-light, #404258);
     }
@@ -251,7 +251,7 @@
     color: #303e49
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width:700px) {
     .vertical-timeline-element-content .vertical-timeline-element-date,
     .vertical-timeline-element-content p {
         margin-left: 10px;
