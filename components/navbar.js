@@ -1,7 +1,7 @@
-import React from 'react'
-import { useRouter } from 'next/router';
 import { Box, Button, Grid, Text } from "@chakra-ui/react"
 
+import React from 'react'
+import { useRouter } from 'next/router';
 
 const Navbar = () => {
     const router = useRouter();
@@ -27,9 +27,9 @@ const Navbar = () => {
                     </Text>
                 </Button>
 
-                <Button variant="ghost" onClick={() => router.push('/highlights')}>
+                <Button variant="ghost" onClick={() => router.push('/activity')}>
                     <Text textStyle={'subtitle'}>
-                        Highlights
+                        Activity
                     </Text>
                 </Button>
             </Grid>
