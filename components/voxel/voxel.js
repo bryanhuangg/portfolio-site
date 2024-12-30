@@ -85,7 +85,7 @@ const Voxel = () => {
 
             // Add cursor styles for controls
             const canvas = renderer.domElement
-            canvas.style.cursor = 'pointer'
+            canvas.style.cursor = 'grab'
 
             controls.addEventListener('start', () => {
                 canvas.style.cursor = 'grabbing'

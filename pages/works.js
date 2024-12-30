@@ -1,4 +1,4 @@
-import { Container, Box, Heading, Text, useColorModeValue, List, ListItem, Button } from '@chakra-ui/react'
+import { Container, Card, CardBody, Box, Heading, Text, useColorModeValue, List, ListItem, Button } from '@chakra-ui/react'
 import styled from "@emotion/styled";
 import SectionTransition from "../components/section-transition";
 
@@ -17,13 +17,16 @@ const Page = () => {
     return (
         <Container>
             <SectionTransition delay={0}>
-                <Heading as="h3" marginTop={10} >
-                    <Title>
-                        <Text color = {useColorModeValue('#394867', '#f2f2f0')}>
+                <Card>
+                    <CardBody>
+                        <Text textStyle={'subtitle'}>
                             Works
                         </Text>
-                    </Title>
-                </Heading>
+                        <Text textStyle={'text'}>
+                            See my projects and products that I have worked on. These are a mix of personal projects, hackathons, and professional work.
+                        </Text>
+                    </CardBody>
+                </Card>
             </SectionTransition>
         </Container >
     )

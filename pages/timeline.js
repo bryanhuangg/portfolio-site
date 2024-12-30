@@ -48,7 +48,7 @@ const Page = () => {
                         title="Exchange Student" 
                         organization="Tsinghua University"
                         organizationUrl="https://www.tsinghua.edu.cn/"
-                        description="CLIC Scholarship"
+                        description="Departments of Computer Science and Economics, on CLIC scholarship."
                     />
 
 

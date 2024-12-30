@@ -12,10 +12,10 @@ const Page = () => {
     return (
         <Container>
             <SectionTransition delay={0}>
-                <Heading as="h3" marginTop={10} >
+                <Heading as="h3" marginTop={20} marginBottom={20}>
                     <Title>
                         <Text color = {useColorModeValue('#394867', '#f2f2f0')}>
-                            Highlights
+                            Nothing so far.
                         </Text>
                     </Title>
                 </Heading>
