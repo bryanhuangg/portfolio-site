@@ -1,10 +1,9 @@
-import { ChakraProvider} from "@chakra-ui/react";
-import Layout from '../components/layouts/main'
-import "@fontsource/press-start-2p"
-import "@fontsource/vt323"
-import theme from '../lib/theme'
-import styled from "@emotion/styled";
+import '@fontsource-variable/raleway'
+import '../css/timeline-custom.css'
 
+import { ChakraProvider } from "@chakra-ui/react"
+import Layout from '../components/layouts/main'
+import theme from '../lib/theme'
 
 const Website = ({Component, pageProps, router}) => {
     return (

@@ -1,161 +1,166 @@
-import {Container, Box, Heading, Text, useColorModeValue, List, ListItem, Button} from '@chakra-ui/react'
-import Link from "next/link";
-import styled from "@emotion/styled";
+import {
+    Box,
+    Button,
+    ButtonGroup,
+    Card,
+    CardBody,
+    CardFooter,
+    Container,
+    Flex,
+    Modal,
+    ModalBody,
+    ModalCloseButton,
+    ModalContent,
+    ModalFooter,
+    ModalHeader,
+    ModalOverlay,
+    Text,
+    useColorModeValue,
+    useDisclosure,
+    useTheme,
+    useToast
+} from '@chakra-ui/react'
+
+import { FaFile } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
 import SectionTransition from "../components/section-transition";
-import {IoLogoGithub, IoLogoLinkedin, IoMail} from "react-icons/io5";
+import { TbPinnedFilled } from "react-icons/tb";
+import UserProfile from "../components/user-profile";
 
+const Page = () => {
+    const toast = useToast()
+    const theme = useTheme();
+    const { isOpen, onOpen, onClose } = useDisclosure()
 
-const Subtitle = styled.span`
-  font-family: "Press Start 2P";
-  font-size: 10px;
-  font-weight: lighter;
-`
-
-const Title = styled.span`
-  font-family: "Press Start 2P";
-  font-size: 13px;
-  font-weight: normal;
-`
-
-const Body = styled.span`
-  font-family: "VT323";
-  font-size: 18px;
-  font-weight: lighter;
-`
-
-const Name = styled.span`
-  font-family: "Press Start 2P";
-  font-size: 25px;
-  font-weight: bold;
-  as: h2
-`
-const Page =()=> {
     return (
         <Container>
             <SectionTransition delay={0}>
-            <Box bg = {useColorModeValue('#9BA4B5', '#F4EEE0')}
-            p={2} align = "center" mb={5}>
-                <Subtitle>
-                    <Text color = "#212A3E">
-                        Hello, welcome to my portfolio website!
-                    </Text>
-                </Subtitle>
-            </Box>
+                <Card>
+                    <CardBody>
+                        <Flex align="center" mb={3}>
+                            <UserProfile time={'2 days ago'} />
+                            <Flex ml="auto" alignSelf="flex-start" alignItems="center">
+                                <TbPinnedFilled size={15} color={useColorModeValue(theme.colors.customLight, theme.colors.customDark)} />
+                                <Text textStyle={'title'} ml={1} fontSize={10} fontWeight={400}>
+                                    Pinned
+                                </Text>
+                            </Flex>
+                        </Flex>
 
-                <Box display ={{ md:'flex'}}>
-                    <Box flexGrow={1}>
-                        <Name>
-                            <Text color = {useColorModeValue('#394867', '#f2f2f0')}>
-                            Bryan Huang
-                            </Text>
-                        </Name>
-                        <Subtitle>
-                            <Text color = {useColorModeValue('#212A3E', '#F4EEE0')}>
-                                Computer Science Student at UBC
-                            </Text>
-                        </Subtitle>
-                    </Box>
-                </Box>
+                        <Text textStyle={'subtitle'}>
+                            About Me
+                        </Text>
+
+                        <Text textStyle={'text'} mt={1}>
+                            Hello there, I'm Bryan! Currently, I am a student at the University of British Columbia studying
+                            Computer Science as well as Economics. My passion for technology started at a young age,
+                            and I've been fascinated by how the power of software is able to change the world ever since.
+                            If you're looking for a driven, motivated software engineer to join your team, I'd love to
+                            connect and see how I can help!
+                        </Text>
+
+                    </CardBody>
+                </Card>
+            </SectionTransition>
+
+            <SectionTransition delay={0.1}>
+                <Card>
+                    <CardBody>
+                        <UserProfile time={'10 hours ago'} />
+                        <Text textStyle={'subtitle'} mt={3}>
+                            Resume
+                        </Text>
+                        <Text textStyle={'text'} mt={1}>
+                            View or download my resume to learn more about my work experience, education, and skills.
+                        </Text>
+                    </CardBody>
+
+                    <CardFooter>
+                        <ButtonGroup spacing='2'>
+                            <Button
+                                variant='solid'
+                                size={'sm'}
+                                onClick={onOpen}
+                            >
+                                View
+                            </Button>
+                            <Button
+                                as="a"
+                                href="/Resume.pdf"
+                                download
+                                variant='ghost'
+                                size={'sm'}
+                                onClick={() => {
+                                    toast({
+                                        description: 'Resume downloaded',
+                                        status: 'success',
+                                        duration: 3000,
+                                        isClosable: true,
+                                        position: 'bottom-right',
+                                        variant: 'subtle',
+                                        colorScheme: 'blue',
+                                    })
+                                }}
+                            >
+                                Download
+                            </Button>
+                        </ButtonGroup>
+                    </CardFooter>
+                </Card>
             </SectionTransition>
 
             <SectionTransition delay={0.2}>
-                <Heading as="h3" marginTop={10} >
-                    <Title>
-                        <Text color = {useColorModeValue('#394867', '#f2f2f0')}>
-                         About Me
+                <Card>
+                    <CardBody>
+                        <UserProfile time={'22 hours ago'} />
+                        <Text textStyle={'subtitle'} mt={3}>
+                            Website Source Code
                         </Text>
-                    </Title>
-                </Heading>
-                <Box  marginTop={3} >
-                    <Body>
-                        <Text color = {useColorModeValue('#212A3E', '#F4EEE0')}>
-                            Hello there, I'm Bryan! Currently, I am a student at the University of British Columbia studying
-                            Computer Science as well as Economics. My passion for technology  started at a young age,
-                            and I've been fascinated by how the power of software is able change the world ever since.
-                            If you're looking for a driven, motivated software developer/engineer to join your team, I'd love to
-                            connect and see how I can help!
+                        <Text textStyle={'text'} mt={1}>
+                            See how I built this website by checking out the source code in my GitHub repository.
                         </Text>
-                    </Body>
-                </Box>
+                    </CardBody>
+
+                    <CardFooter>
+                        <Button
+                            leftIcon={<FaGithub size={'16px'} />}
+                            variant='solid'
+                            size={'sm'}
+                            alignContent={'center'}
+                            onClick={() => window.open('https://github.com/bryanhuangg/portfolio-site', '_blank')}
+                        >
+                            Visit
+                        </Button>
+                    </CardFooter>
+                </Card>
             </SectionTransition>
 
-            <SectionTransition delay={0.3}>
-                <Heading as="h3" marginTop={10}>
-                    <Title>
-                        <Text  color = {useColorModeValue('#394867', '#f2f2f0')}>
-                            I Enjoy
-                        </Text>
-                    </Title>
-                </Heading>
 
-                <Box  marginTop={3} >
-                    <Body>
-                        <Text color = {useColorModeValue('#212A3E', '#F4EEE0')}>
-                            playing video games - camping - eating - breathing
+            <Modal isOpen={isOpen} onClose={onClose} size="xl">
+                <ModalOverlay />
+                <ModalContent bg={useColorModeValue(theme.colors.bgLight, theme.colors.bgDark)}>
+                    <ModalHeader>
+                        <Box display="flex" alignItems="center">
+                            <FaFile color={useColorModeValue(theme.colors.customLight, theme.colors.customDark)} />
+                            <Text textStyle={'title'} ml={2}>
+                                Resume
+                            </Text>
+                        </Box>
+                        <Text textStyle={'subtitle'}>
+                            View my full experience in the CV timeline section
                         </Text>
-                        <Text fontSize={15} color = {useColorModeValue('#212A3E', '#F4EEE0')}>
-                            (at least I'm aware that I'm boring)
-                        </Text>
-                    </Body>
-                </Box>
-            </SectionTransition>
-
-            <SectionTransition delay={0.4}>
-                <Heading as="h3" marginTop={10} >
-                    <Title>
-                        <Text color = {useColorModeValue('#394867', '#f2f2f0')}>
-                            Connect With Me:
-                        </Text>
-                    </Title>
-                </Heading>
-                <Box  marginTop={3} >
-                    <Body>
-                        <List>
-                            <ListItem>
-                                <Link href="https://github.com/bryanhuangg" target="_blank">
-                                    <Button
-                                        variant="ghost"
-                                        colorScheme= "gray"
-                                        leftIcon={<IoLogoGithub />}
-                                        fontSize="lg"
-                                        fontWeight="lighter"
-                                    >
-                                        /bryanhuangg
-                                    </Button>
-                                </Link>
-                            </ListItem>
-
-                            <ListItem>
-                                <Link href="https://www.linkedin.com/in/bryanhuangg/" target="_blank">
-                                    <Button
-                                        variant="ghost"
-                                        colorScheme= "gray"
-                                        leftIcon={<IoLogoLinkedin />}
-                                        fontSize="lg"
-                                        fontWeight="lighter"
-                                    >
-                                        /bryanhuangg
-                                    </Button>
-                                </Link>
-                            </ListItem>
-
-                            <ListItem>
-                                <Link href="mailto:bryanhuangg@gmail.com" target="_blank">
-                                    <Button
-                                        variant="ghost"
-                                        colorScheme= "gray"
-                                        leftIcon={<IoMail />}
-                                        fontSize="lg"
-                                        fontWeight="lighter"
-                                    >
-                                        bryanhuangg@gmail.com
-                                    </Button>
-                                </Link>
-                            </ListItem>
-                        </List>
-                    </Body>
-                </Box>
-            </SectionTransition>
+                    </ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody>
+                        <iframe
+                            src="/Resume.pdf"
+                            style={{ width: '100%', height: '75vh', borderRadius: '0.375rem' }}
+                        />
+                    </ModalBody>
+                    <ModalFooter>
+                    </ModalFooter>
+                </ModalContent>
+            </Modal>
         </Container>
     )
 }
