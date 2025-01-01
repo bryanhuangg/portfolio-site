@@ -30,14 +30,16 @@ const Page = () => {
                             borderRadius={8}
                             boxShadow={'lg'}
                         />
-                        <CardBody>
+                        <CardBody maxH={'200px'} overflow={'hidden'} ml={4}>
                             <Flex direction={'column'} h={'100%'} justify={'space-between'}>
                                 <Box>
                                     <Link href={'https://chromewebstore.google.com/detail/hue-more-colors-for-googl/gglmljnnfgfkajefpbgjaeobelpokhbn'} target='_blank'>
-                                        <Text textStyle={'subtitle'}> Hue: More Colors for Google Calendar</Text>
+                                        <Text textStyle={'subtitle'} noOfLines={1}>
+                                            Hue: More Colors for Google Calendar
+                                        </Text>
                                     </Link>
 
-                                    <Text textStyle={'text'}>
+                                    <Text textStyle={'text'} noOfLines={4}>
                                         A Chrome extension designed to enhance and personalize your Google Calendar experience,
                                         currently with over 3000 active users.
                                     </Text>
@@ -47,14 +49,13 @@ const Page = () => {
                                     <Button variant='solid' size={'sm'}>
                                         See More
                                     </Button>
-                                    <Button leftIcon={<FaGithub size={'16px'} />} variant='ghost' size={'sm'} onClick={() => window.open('https://github.com/bryanhuangg/gcal-hue', '_blank')}>
+                                    <Button leftIcon={<FaGithub size={'16px'} />} variant='ghost' size={'sm'} ml={2} onClick={() => window.open('https://github.com/bryanhuangg/gcal-hue', '_blank')}>
                                         Source
                                     </Button>
                                 </Flex>
                             </Flex>
                         </CardBody>
                     </Flex>
-
                 </Card>
             </SectionTransition>
         </Container >
