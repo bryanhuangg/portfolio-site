@@ -56,9 +56,10 @@ const WorkPopup = ({ isOpen, onClose, title, description, images, videoUrl, tech
                                 boxShadow={'lg'}
                             >
                                 <Flex
-                                    transform={`translateX(-${currentIndex * 100}%)`}
+                                    transform={`translateX(-${currentIndex * 102}%)`}
                                     transition="transform 0.3s ease-in-out"
                                     width="100%"
+                                    gap={4} 
                                 >
                                     {mediaItems.map((item, idx) => (
                                         <Box
