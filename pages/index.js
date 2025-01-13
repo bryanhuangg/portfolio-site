@@ -52,11 +52,10 @@ const Page = () => {
                         </Text>
 
                         <Text textStyle={'text'} mt={1}>
-                            Hello there, I'm Bryan! Currently, I am a student at the University of British Columbia studying
-                            Computer Science as well as Economics. My passion for technology started at a young age,
-                            and I've been fascinated by how the power of software is able to change the world ever since.
-                            If you're looking for a driven, motivated software engineer to join your team, I'd love to
-                            connect and see how I can help!
+                            Hi, I’m Bryan! I’m a 4th-year Computer Science and Economics student at the University of British Columbia 
+                            with a passion for software development. I thrive on opportunities to learn, grow, and take on new challenges. 
+                            Over the years, I’ve worked on a wide range of projects—from web development to software solutions for space 
+                            technologies—sharpening my skills and fueling my love for innovation and problem-solving. Always excited for what’s next!
                         </Text>
 
                     </CardBody>
