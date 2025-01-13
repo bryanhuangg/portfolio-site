@@ -4,7 +4,7 @@ import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 
 import { useState } from 'react'
 
-const WorkPopup = ({ isOpen, onClose, title, description, images, videoUrl, techStack, productUrl, githubUrl}) => {
+const WorkPopup = ({ isOpen, onClose, title, description, images, videoUrl, techStack, productUrl, githubUrl }) => {
     const theme = useTheme();
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -56,10 +56,10 @@ const WorkPopup = ({ isOpen, onClose, title, description, images, videoUrl, tech
                                 boxShadow={'lg'}
                             >
                                 <Flex
-                                    transform={`translateX(-${currentIndex * 102}%)`}
+                                    transform={`translateX(calc(-${currentIndex} * (100% + 1rem)))`}
                                     transition="transform 0.3s ease-in-out"
                                     width="100%"
-                                    gap={4} 
+                                    gap={'1rem'}
                                 >
                                     {mediaItems.map((item, idx) => (
                                         <Box
