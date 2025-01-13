@@ -116,7 +116,7 @@ const Page = () => {
                             Website Source Code
                         </Text>
                         <Text textStyle={'text'} mt={1}>
-                            See how I built this website by checking out the source code in my GitHub repository.
+                            See how I built this website by checking out the source code in my GitHub repository. (All the art was made by me too!)
                         </Text>
                     </CardBody>
 
