@@ -18,7 +18,7 @@ import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeli
 
 import { FaGithub } from "react-icons/fa";
 import SectionTransition from "../components/section-transition";
-import TimelineEvent from '../components/timeline-event';
+import TimelineEvent from '../components/timeline/timeline-event';
 import styled from "@emotion/styled";
 
 const Page = () => {
