@@ -2,6 +2,7 @@ import { Box, Button, Card, CardBody, Container, Flex, Heading, Image, Link, Lis
 
 import { FaGithub } from "react-icons/fa";
 import SectionTransition from "../components/section-transition";
+import WorkPopup from '../components/works/work-popup';
 import styled from "@emotion/styled";
 
 const Page = () => {
@@ -61,19 +62,18 @@ const Page = () => {
                 </Card>
             </SectionTransition>
 
-            <Modal isOpen={isOpen} onClose={onClose} size="xl">
-                <ModalOverlay />
-                <ModalContent>
-                    <ModalHeader>Hue: More Colors for Google Calendar</ModalHeader>
-                    <ModalCloseButton />
-                    <ModalBody pb={6}>
-                        <Text textStyle={'text'}>
-                            A Chrome extension designed to enhance and personalize your Google Calendar experience.
-                            Currently trusted by over 5000 active users worldwide.
-                        </Text>
-                    </ModalBody>
-                </ModalContent>
-            </Modal>
+            <WorkPopup
+                isOpen={isOpen}
+                onClose={onClose}
+                title={"Hue: More Colors for Google Calendar"}
+                description={"A Chrome extension designed to enhance and personalize your Google Calendar experience by giving users full control over customizability options. " +
+                    "Currently featured by the Chrome web store with over 5000 monthly active users."}
+                techStack={["JavaScript", "React", "Node.js", "Webpack"]}
+                images={['/images/works/hue-1.png', '/images/works/hue-2.png']}
+                videoUrl="https://www.youtube.com/watch?v=IeK7jb134XQ"
+                githubUrl="https://github.com/bryanhuangg/gcal-hue"
+                productUrl="https://chromewebstore.google.com/detail/hue-more-colors-for-googl/gglmljnnfgfkajefpbgjaeobelpokhbn"
+            />
         </Container >
     )
 }
