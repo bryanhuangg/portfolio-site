@@ -10,19 +10,28 @@ import {
     Link,
     List,
     ListItem,
+    Modal,
+    ModalBody,
+    ModalCloseButton,
+    ModalContent,
+    ModalFooter,
+    ModalHeader,
+    ModalOverlay,
     Text,
     useColorModeValue,
+    useDisclosure,
     useTheme,
 } from '@chakra-ui/react'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 
-import { FaGithub } from "react-icons/fa";
 import SectionTransition from "../components/section-transition";
 import TimelineEvent from '../components/timeline/timeline-event';
 import styled from "@emotion/styled";
 
 const Page = () => {
     const theme = useTheme();
+    const { isOpen, onOpen, onClose } = useDisclosure()
+
     return (
         <Container>
             <SectionTransition delay={0.0}>
@@ -45,7 +54,7 @@ const Page = () => {
                         date="Feb 2025 - Jun 2025"
                         logoSrc="/svg/tsinghua.svg"
                         logoAlt="Tsinghua Logo"
-                        title="Exchange Student" 
+                        title="Exchange Student"
                         organization="Tsinghua University"
                         organizationUrl="https://www.tsinghua.edu.cn/"
                         description="Departments of Computer Science and Economics, on CLIC scholarship."
@@ -64,6 +73,7 @@ const Page = () => {
                                     contribution to the Square Kilometer Array (SKA), a global initiative to build the 
                                     world's next-largest telescope array."
                         showButton={true}
+                        onButtonClick={onOpen}
                     />
 
 
@@ -153,6 +163,32 @@ const Page = () => {
                 </Container>
 
             </SectionTransition>
+
+            // Resume Modal Popup
+            <Modal isOpen={isOpen} onClose={onClose} size="xl">
+                <ModalOverlay />
+                <ModalContent bg={useColorModeValue(theme.colors.bgLight, theme.colors.bgDark)}>
+                    <ModalHeader>
+                        <Flex flexDirection={'row'} gap={2} >
+                            <Image
+                                src={"/svg/mda.svg"}
+                                alt={"MDA Space Logo"}
+                                width={22}
+                                height={22}
+                                fill={useColorModeValue(theme.colors.bgLight, theme.colors.bgDark)}
+                            />
+                            <Text textStyle={'Title'}>MDA Space</Text>
+                        </Flex>
+                    </ModalHeader>
+
+                    <ModalCloseButton />
+                    <ModalBody>
+
+                    </ModalBody>
+                    <ModalFooter>
+                    </ModalFooter>
+                </ModalContent>
+            </Modal>
         </Container >
     )
 }

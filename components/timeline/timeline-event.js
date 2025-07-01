@@ -58,7 +58,8 @@ const TimelineEvent = ({
                             size={'xs'}
                             color={bgColor}
                             backgroundColor={textColor}
-                            mt={3}
+                            mt={3} 
+                            _hover={{}}
                             onClick={onButtonClick}
                         >
                             More details
