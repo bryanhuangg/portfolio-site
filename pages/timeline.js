@@ -26,6 +26,7 @@ import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeli
 
 import SectionTransition from "../components/section-transition";
 import TimelineEvent from '../components/timeline/timeline-event';
+import TimelinePopup from '../components/timeline/timeline-popup';
 import styled from "@emotion/styled";
 
 const Page = () => {
@@ -164,31 +165,16 @@ const Page = () => {
 
             </SectionTransition>
 
-            // Resume Modal Popup
-            <Modal isOpen={isOpen} onClose={onClose} size="xl">
-                <ModalOverlay />
-                <ModalContent bg={useColorModeValue(theme.colors.bgLight, theme.colors.bgDark)}>
-                    <ModalHeader>
-                        <Flex flexDirection={'row'} gap={2} >
-                            <Image
-                                src={"/svg/mda.svg"}
-                                alt={"MDA Space Logo"}
-                                width={22}
-                                height={22}
-                                fill={useColorModeValue(theme.colors.bgLight, theme.colors.bgDark)}
-                            />
-                            <Text textStyle={'Title'}>MDA Space</Text>
-                        </Flex>
-                    </ModalHeader>
 
-                    <ModalCloseButton />
-                    <ModalBody>
-
-                    </ModalBody>
-                    <ModalFooter>
-                    </ModalFooter>
-                </ModalContent>
-            </Modal>
+            <TimelinePopup
+                isOpen={isOpen}
+                onClose={onClose}
+                title={"MDA Space: Software Engineer Co-op"}
+                description={"Developed software for large scale correlation and beam-forming as part of Canada's contribution to the Square Kilometer Array (SKA), a global initiative to build the world's next-largest telescope array."}
+                techStack={["Python", "C++", "Kubernetes", "FPGA", "Docker"]}
+                images={['/images/works/hue-1.png', '/images/works/hue-2.png', '/images/works/hue-3.png']}
+                companyUrl={"https://mda.space/"}
+            />
         </Container >
     )
 }
