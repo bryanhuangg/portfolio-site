@@ -1,10 +1,10 @@
-import { Badge, Box, Button, Flex, Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Stack, Text, useColorModeValue, useTheme } from '@chakra-ui/react'
+import { Badge, Box, Button, Flex, Image, Link, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Stack, Text, useColorModeValue, useTheme } from '@chakra-ui/react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 
 import { useState } from 'react'
 
-const TimelinePopup = ({ isOpen, onClose, title, description, images, videoUrl, techStack, companyUrl, githubUrl }) => {
+const TimelinePopup = ({ isOpen, onClose, title, organization, date, description, images, videoUrl, techStack, organizationUrl, githubUrl }) => {
     const theme = useTheme();
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -31,7 +31,10 @@ const TimelinePopup = ({ isOpen, onClose, title, description, images, videoUrl, 
         <Modal isOpen={isOpen} onClose={onClose} size="xl">
             <ModalOverlay />
             <ModalContent bg={useColorModeValue(theme.colors.bgLight, theme.colors.bgDark)}>
-                <ModalHeader><Text textStyle={'Title'}>{title}</Text></ModalHeader>
+                <ModalHeader>
+                    <Text textStyle={'Title'}>{title}</Text>
+                    <Text textStyle={'text'}>{organization}</Text>
+                </ModalHeader>
                 <ModalCloseButton />
                 <ModalBody pb={6}>
 
@@ -139,13 +142,13 @@ const TimelinePopup = ({ isOpen, onClose, title, description, images, videoUrl, 
                     </Text>
 
                     {/* Buttons */}
-                    {(companyUrl || githubUrl) && (
+                    {(organizationUrl || githubUrl) && (
                         <Box mt={4}>
                             <Stack direction="row" spacing={2} justify={'center'}>
-                                {companyUrl && (
+                                {organizationUrl && (
                                     <Button
                                         leftIcon={<FaExternalLinkAlt />}
-                                        onClick={() => window.open(companyUrl, '_blank')}
+                                        onClick={() => window.open(organizationUrl, '_blank')}
                                         size="sm"
                                         variant="solid"
                                     >

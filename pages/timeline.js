@@ -169,11 +169,14 @@ const Page = () => {
             <TimelinePopup
                 isOpen={isOpen}
                 onClose={onClose}
-                title={"MDA Space: Software Engineer Co-op"}
+                title={"Software Engineer Co-op/Part-time"}
+                company={"MDA Space"}
+                date={"Jan 2024 - Dec 2024"}
+                logoSrc={"/svg/mda.svg"}
                 description={"Developed software for large scale correlation and beam-forming as part of Canada's contribution to the Square Kilometer Array (SKA), a global initiative to build the world's next-largest telescope array."}
-                techStack={["Python", "C++", "Kubernetes", "FPGA", "Docker"]}
-                images={['/images/works/hue-1.png', '/images/works/hue-2.png', '/images/works/hue-3.png']}
-                companyUrl={"https://mda.space/"}
+                techStack={["Python", "C++", "Kubernetes", "FPGA", "Docker", "Elasticsearch","Linux"]}
+                images={[]}
+                organizationUrl={"https://mda.space/"}
             />
         </Container >
     )
