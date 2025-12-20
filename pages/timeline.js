@@ -10,13 +10,6 @@ import {
     Link,
     List,
     ListItem,
-    Modal,
-    ModalBody,
-    ModalCloseButton,
-    ModalContent,
-    ModalFooter,
-    ModalHeader,
-    ModalOverlay,
     Text,
     useColorModeValue,
     useDisclosure,
@@ -31,7 +24,8 @@ import styled from "@emotion/styled";
 
 const Page = () => {
     const theme = useTheme();
-    const { isOpen, onOpen, onClose } = useDisclosure()
+    const { isOpen: isMDAOpen, onOpen: onMDAOpen, onClose: onMDAClose } = useDisclosure()
+    const { isOpen: isTHUOpen, onOpen: onTHUOpen, onClose: onTHUClose } = useDisclosure()
 
     return (
         <Container>
@@ -50,6 +44,22 @@ const Page = () => {
             <SectionTransition delay={0.1}>
 
                 <VerticalTimeline lineColor={useColorModeValue(theme.colors.customLight, theme.colors.customDark)} layout='2-columns'>
+
+
+                    {/* Quantatitative RA */}
+                    <TimelineEvent
+                        date="Feb 2025 - Jun 2025"
+                        logoSrc="/svg/ubc.svg"
+                        logoAlt="UBC Logo"
+                        title="Quantatitative RA"
+                        organization="UBC Sauder School for Business"
+                        organizationUrl="https://www.sauder.ubc.ca/"
+                        description="Built NLP pipelines and applied econometric methods to identify relationships between textual patterns and business outcomes."
+                        showButton={false}
+                    />
+
+
+
                     {/* Tsinghua Exchange */}
                     <TimelineEvent
                         date="Feb 2025 - Jun 2025"
@@ -59,6 +69,8 @@ const Page = () => {
                         organization="Tsinghua University"
                         organizationUrl="https://www.tsinghua.edu.cn/"
                         description="Departments of Computer Science and Economics, on CLIC scholarship."
+                        showButton={true}
+                        onButtonClick={onTHUOpen}
                     />
 
 
@@ -74,7 +86,7 @@ const Page = () => {
                                     contribution to the Square Kilometer Array (SKA), a global initiative to build the 
                                     world's next-largest telescope array."
                         showButton={true}
-                        onButtonClick={onOpen}
+                        onButtonClick={onMDAOpen}
                     />
 
 
@@ -143,7 +155,6 @@ const Page = () => {
 
                     />
 
-
                     {/* Code Ninjas */}
                     <TimelineEvent
                         date="Jun 2021 - Sep 2022"
@@ -167,17 +178,30 @@ const Page = () => {
 
 
             <TimelinePopup
-                isOpen={isOpen}
-                onClose={onClose}
-                title={"Software Engineer Co-op/Part-time"}
-                company={"MDA Space"}
+                isOpen={isMDAOpen}
+                onClose={onMDAClose}
+                title={"Software Engineer Co-op"}
+                organization={"MDA Space"}
                 date={"Jan 2024 - Dec 2024"}
                 logoSrc={"/svg/mda.svg"}
                 description={"Developed software for large scale correlation and beam-forming as part of Canada's contribution to the Square Kilometer Array (SKA), a global initiative to build the world's next-largest telescope array."}
                 techStack={["Python", "C++", "Kubernetes", "FPGA", "Docker", "Elasticsearch","Linux"]}
-                images={[]}
                 organizationUrl={"https://mda.space/"}
             />
+
+            <TimelinePopup
+                isOpen={isTHUOpen}
+                onClose={onTHUClose}
+                title={"Exchange Student"}
+                organization={"Tsinghua University"}
+                date={"Feb 2025 - Jul 2025"}
+                logoSrc={"/svg/tsinghua.svg"}
+                description={"Developed software for large scale correlation and beam-forming as part of Canada's contribution to the Square Kilometer Array (SKA), a global initiative to build the world's next-largest telescope array."}
+                organizationUrl={"https://mda.space/"}
+            />
+
+
+
         </Container >
     )
 }

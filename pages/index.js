@@ -7,6 +7,7 @@ import {
     CardFooter,
     Container,
     Flex,
+    Image,
     Modal,
     ModalBody,
     ModalCloseButton,
