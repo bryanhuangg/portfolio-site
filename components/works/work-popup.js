@@ -30,7 +30,7 @@ const WorkPopup = ({ isOpen, onClose, title, description, images, videoUrl, tech
     return (
         <Modal isOpen={isOpen} onClose={onClose} size="xl">
             <ModalOverlay />
-            <ModalContent>
+            <ModalContent bg={useColorModeValue(theme.colors.bgLight, theme.colors.bgDark)}>
                 <ModalHeader><Text textStyle={'Title'}>{title}</Text></ModalHeader>
                 <ModalCloseButton />
                 <ModalBody pb={6}>

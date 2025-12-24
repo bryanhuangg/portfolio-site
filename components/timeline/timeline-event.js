@@ -41,12 +41,20 @@ const TimelineEvent = ({
                 </div>
             }
         >
-            <Text textStyle={'subtitle'} fontSize={'14px'} color={textColor}>
-                <b style={{ marginBottom: '-5px', display: 'block' }}>{title}</b>
-                <Link href={organizationUrl} target="_blank" style={{ display: 'inline-block' }}>
+            <Text textStyle="subtitle" fontSize="14px" color={textColor}>
+                <b style={{ display: 'block', lineHeight: 'normal' }}>
+                    {title}
+                </b>
+                <Link href={organizationUrl} target="_blank"
+                    style={{
+                        display: 'block', 
+                        lineHeight: '1.1',
+                    }}
+                >
                     {organization}
                 </Link>
             </Text>
+
 
             <Text textStyle={'text'} fontSize={'12px'} color={textColor}>
                 {description}
@@ -59,6 +67,7 @@ const TimelineEvent = ({
                             color={bgColor}
                             backgroundColor={textColor}
                             mt={3}
+                            _hover={{}}
                             onClick={onButtonClick}
                         >
                             More details

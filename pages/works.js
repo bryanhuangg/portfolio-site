@@ -69,7 +69,7 @@ const Page = () => {
                 description={"A Chrome extension designed to enhance and personalize your Google Calendar experience by giving users full control over customizability options. " +
                     "Currently featured by the Chrome web store with over 5000 monthly active users."}
                 techStack={["JavaScript", "React", "Node.js", "Webpack"]}
-                images={['/images/works/hue-1.png', '/images/works/hue-2.png']}
+                images={['/images/works/hue-1.png', '/images/works/hue-2.png', '/images/works/hue-3.png']}
                 videoUrl="https://www.youtube.com/watch?v=IeK7jb134XQ"
                 githubUrl="https://github.com/bryanhuangg/gcal-hue"
                 productUrl="https://chromewebstore.google.com/detail/hue-more-colors-for-googl/gglmljnnfgfkajefpbgjaeobelpokhbn"

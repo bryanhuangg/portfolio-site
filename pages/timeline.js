@@ -12,17 +12,22 @@ import {
     ListItem,
     Text,
     useColorModeValue,
+    useDisclosure,
     useTheme,
 } from '@chakra-ui/react'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 
-import { FaGithub } from "react-icons/fa";
 import SectionTransition from "../components/section-transition";
 import TimelineEvent from '../components/timeline/timeline-event';
+import TimelineWorkPopup from '../components/timeline/timeline-popup-work';
 import styled from "@emotion/styled";
 
 const Page = () => {
     const theme = useTheme();
+    const { isOpen: isMDAOpen, onOpen: onMDAOpen, onClose: onMDAClose } = useDisclosure()
+    const { isOpen: isVSEOpen, onOpen: onVSEOpen, onClose: onVSEClose } = useDisclosure()
+    const { isOpen: isTTEKOpen, onOpen: onTTEKOpen, onClose: onTTEKClose } = useDisclosure()
+
     return (
         <Container>
             <SectionTransition delay={0.0}>
@@ -40,18 +45,32 @@ const Page = () => {
             <SectionTransition delay={0.1}>
 
                 <VerticalTimeline lineColor={useColorModeValue(theme.colors.customLight, theme.colors.customDark)} layout='2-columns'>
+
+
+                    {/* Quantatitative RA */}
+                    <TimelineEvent
+                        date="Feb 2025 - Jun 2025"
+                        logoSrc="/svg/ubc.svg"
+                        logoAlt="UBC Logo"
+                        title="Quantatitative RA"
+                        organization="UBC Sauder School for Business"
+                        organizationUrl="https://www.sauder.ubc.ca/"
+                        description="Built NLP pipelines and applied econometric methods to identify relationships between textual patterns and business outcomes."
+                        showButton={false}
+                    />
+
                     {/* Tsinghua Exchange */}
                     <TimelineEvent
                         date="Feb 2025 - Jun 2025"
                         logoSrc="/svg/tsinghua.svg"
                         logoAlt="Tsinghua Logo"
-                        title="Exchange Student" 
+                        title="Exchange Student"
                         organization="Tsinghua University"
                         organizationUrl="https://www.tsinghua.edu.cn/"
                         description="Departments of Computer Science and Economics, on CLIC scholarship."
+                        showButton={false}
                     />
-
-
+ 
                     {/* MDA Space */}
                     <TimelineEvent
                         date="Jan 2024 - Dec 2024"
@@ -64,8 +83,8 @@ const Page = () => {
                                     contribution to the Square Kilometer Array (SKA), a global initiative to build the 
                                     world's next-largest telescope array."
                         showButton={true}
+                        onButtonClick={onMDAOpen}
                     />
-
 
                     {/* VSE */}
                     <TimelineEvent
@@ -73,11 +92,12 @@ const Page = () => {
                         logoSrc="/svg/ubc.svg"
                         logoAlt="UBC Logo"
                         title="Web Designer"
-                        organization="VSE at UBC"
+                        organization="The Vancouver School of Economics at UBC"
                         organizationUrl="https://economics.ubc.ca/"
                         description="Contracted to design and build a WordPress website for the 
                                     Cities in Motion research lab."
                         showButton={true}
+                        onButtonClick={onVSEOpen}
                     />
 
                     {/* Tetra Tech */}
@@ -91,6 +111,7 @@ const Page = () => {
                         description="Worked as a fullstack developer on FusionMap, a web-based GIS platform for
                                     map-based data visualization and analysis."
                         showButton={true}
+                        onButtonClick={onTTEKOpen}
                     />
 
 
@@ -132,7 +153,6 @@ const Page = () => {
 
                     />
 
-
                     {/* Code Ninjas */}
                     <TimelineEvent
                         date="Jun 2021 - Sep 2022"
@@ -153,6 +173,61 @@ const Page = () => {
                 </Container>
 
             </SectionTransition>
+
+
+            <TimelineWorkPopup
+                isOpen={isMDAOpen}
+                onClose={onMDAClose}
+                title={"Software Engineer Co-op"}
+                organization={"MDA Space"}
+                date={"Jan 2024 - Dec 2024 (1 year)"}
+                logoSrc={"/svg/mda.svg"}
+                description={"Developed software for large scale correlation and beam-forming as part of Canada's contribution to the Square Kilometer Array (SKA), a global initiative to build the world's next-largest telescope array."}
+                techStack={["Python", "C++", "Kubernetes", "FPGA", "Docker", "Elasticsearch","Linux"]}
+                contributions={["Achieved a 100% increase in hardware utilization efficiency by optimizing the system initialization algorithm to enable parallelization of FPGA usage.",
+                                "Overhauled the master and control system to enable multi-threaded commands to the signal chain, enhancing processing speed and integrating critical client-required features.",
+                                "Facilitated the onboarding of new team members and provided ongoing support to the team, ensuring effective collaboration and timely resolution of technical challenges."]}
+                organizationUrl={"https://mda.space/"}
+                productUrl={"https://www.skao.int/"}
+            />
+
+            <TimelineWorkPopup
+                isOpen={isVSEOpen}
+                onClose={onVSEClose}
+                title={"Web Designer"}
+                organization={"The Vancouver School of Economics at UBC"}
+                date={"Dec 2023 - Jun 2024 (7 months)"}
+                logoSrc={"/svg/ubc.svg"}
+                description={"Contracted by VSE at UBC to design and build a WordPress website for the Cities in Motion research lab."}
+                techStack={["Figma", "JavaScript", "WordPress"]}
+                organizationUrl={"https://economics.ubc.ca/"}
+                productUrl={"https://citiesinmotionlab.org/"}
+            />
+
+            <TimelineWorkPopup
+                isOpen={isTTEKOpen}
+                onClose={onTTEKClose}
+                title={"Fullstack Developer Co-op"}
+                organization={"Tetra Tech"}
+                date={"Aug 2023 - Dec 2023 (5 months)"}
+                logoSrc={"/svg/tetratech.svg"}
+                description={"Worked as a fullstack developer on FusionMap, a web-based GIS platform for map-based data visualization and analysis."}
+                techStack={["Azure", "TypeScript", "Node.js", "React.js", "PostgreSQL", "Python ", "Flask", "PyTorch", "TensorFlow"]}
+                contributions={["Collaborated closely with the backend development lead to design and execute a comprehensive refactoring initiative for the Flask backend, successfully migrating it to Express.",
+                                "Developed the initial iteration of a React Native mobile application, which is now published on both the App Store and Google Play Store.",
+                                "Implemented AI models such as GroundingDINO and SAM within the application to facilitate image detection, enabling both object detection and segmentation from satellite imagery.",
+                                "Spearheaded the development and implementation of a robust subscription-based payment system leveraging Stripe to enable seamless transactions for premium software features",
+                                "Pioneered a thorough test suite with Mocha and Chai and instituted an efficient logging system using Winston rewrite for improved debugging and monitoring.",
+                                "Restructured PostgreSQL database to align with specific requirements and enhance functionality"]}
+                organizationUrl={"https://mda.space/"}
+                productUrl={"https://fusionmap.com/"}
+            />
+
+
+            
+
+
+
         </Container >
     )
 }

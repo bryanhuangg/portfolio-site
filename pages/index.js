@@ -7,6 +7,7 @@ import {
     CardFooter,
     Container,
     Flex,
+    Image,
     Modal,
     ModalBody,
     ModalCloseButton,
@@ -65,7 +66,15 @@ const Page = () => {
             <SectionTransition delay={0.1}>
                 <Card>
                     <CardBody>
-                        <UserProfile time={'10 hours ago'} />
+                        <Flex align="center" mb={3}>
+                            <UserProfile time={'1 day ago'} />
+                            <Flex ml="auto" alignSelf="flex-start" alignItems="center">
+                                <TbPinnedFilled size={15} color={useColorModeValue(theme.colors.customLight, theme.colors.customDark)} />
+                                <Text textStyle={'title'} ml={1} fontSize={10} fontWeight={400}>
+                                    Pinned
+                                </Text>
+                            </Flex>
+                        </Flex>
                         <Text textStyle={'subtitle'} mt={3}>
                             Resume
                         </Text>
@@ -116,7 +125,7 @@ const Page = () => {
                             Website Source Code
                         </Text>
                         <Text textStyle={'text'} mt={1}>
-                            See how I built this website by checking out the source code in my GitHub repository.
+                            See how I built this website by checking out the source code in my GitHub repository. (All the art was made by me too!)
                         </Text>
                     </CardBody>
 
@@ -134,7 +143,7 @@ const Page = () => {
                 </Card>
             </SectionTransition>
 
-
+            {/* Resume Modal */}
             <Modal isOpen={isOpen} onClose={onClose} size="xl">
                 <ModalOverlay />
                 <ModalContent bg={useColorModeValue(theme.colors.bgLight, theme.colors.bgDark)}>
