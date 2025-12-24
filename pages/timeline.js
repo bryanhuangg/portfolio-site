@@ -19,13 +19,14 @@ import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeli
 
 import SectionTransition from "../components/section-transition";
 import TimelineEvent from '../components/timeline/timeline-event';
-import TimelinePopup from '../components/timeline/timeline-popup';
+import TimelineWorkPopup from '../components/timeline/timeline-popup-work';
 import styled from "@emotion/styled";
 
 const Page = () => {
     const theme = useTheme();
     const { isOpen: isMDAOpen, onOpen: onMDAOpen, onClose: onMDAClose } = useDisclosure()
-    const { isOpen: isTHUOpen, onOpen: onTHUOpen, onClose: onTHUClose } = useDisclosure()
+    const { isOpen: isVSEOpen, onOpen: onVSEOpen, onClose: onVSEClose } = useDisclosure()
+    const { isOpen: isTTEKOpen, onOpen: onTTEKOpen, onClose: onTTEKClose } = useDisclosure()
 
     return (
         <Container>
@@ -58,8 +59,6 @@ const Page = () => {
                         showButton={false}
                     />
 
-
-
                     {/* Tsinghua Exchange */}
                     <TimelineEvent
                         date="Feb 2025 - Jun 2025"
@@ -69,11 +68,9 @@ const Page = () => {
                         organization="Tsinghua University"
                         organizationUrl="https://www.tsinghua.edu.cn/"
                         description="Departments of Computer Science and Economics, on CLIC scholarship."
-                        showButton={true}
-                        onButtonClick={onTHUOpen}
+                        showButton={false}
                     />
-
-
+ 
                     {/* MDA Space */}
                     <TimelineEvent
                         date="Jan 2024 - Dec 2024"
@@ -89,18 +86,18 @@ const Page = () => {
                         onButtonClick={onMDAOpen}
                     />
 
-
                     {/* VSE */}
                     <TimelineEvent
                         date="Dec 2023 - Jun 2024"
                         logoSrc="/svg/ubc.svg"
                         logoAlt="UBC Logo"
                         title="Web Designer"
-                        organization="VSE at UBC"
+                        organization="The Vancouver School of Economics at UBC"
                         organizationUrl="https://economics.ubc.ca/"
                         description="Contracted to design and build a WordPress website for the 
                                     Cities in Motion research lab."
                         showButton={true}
+                        onButtonClick={onVSEOpen}
                     />
 
                     {/* Tetra Tech */}
@@ -114,6 +111,7 @@ const Page = () => {
                         description="Worked as a fullstack developer on FusionMap, a web-based GIS platform for
                                     map-based data visualization and analysis."
                         showButton={true}
+                        onButtonClick={onTTEKOpen}
                     />
 
 
@@ -177,28 +175,48 @@ const Page = () => {
             </SectionTransition>
 
 
-            <TimelinePopup
+            <TimelineWorkPopup
                 isOpen={isMDAOpen}
                 onClose={onMDAClose}
                 title={"Software Engineer Co-op"}
                 organization={"MDA Space"}
-                date={"Jan 2024 - Dec 2024"}
+                date={"Jan 2024 - Dec 2024 (1 year)"}
                 logoSrc={"/svg/mda.svg"}
                 description={"Developed software for large scale correlation and beam-forming as part of Canada's contribution to the Square Kilometer Array (SKA), a global initiative to build the world's next-largest telescope array."}
                 techStack={["Python", "C++", "Kubernetes", "FPGA", "Docker", "Elasticsearch","Linux"]}
+                contributions={["Achieved a 100% increase in hardware utilization efficiency by optimizing the system initialization algorithm to enable parallelization of FPGA usage.",
+                                "Overhauled the master and control system to enable multi-threaded commands to the signal chain, enhancing processing speed and integrating critical client-required features.",
+                                "Facilitated the onboarding of new team members and provided ongoing support to the team, ensuring effective collaboration and timely resolution of technical challenges."]}
+                organizationUrl={"https://mda.space/"}
+                productUrl={"https://www.skao.int/"}
+            />
+
+            <TimelineWorkPopup
+                isOpen={isVSEOpen}
+                onClose={onVSEClose}
+                title={"VSE"}
+                organization={"VSE at UBC"}
+                date={"Dec 2023 - Jun 2024"}
+                logoSrc={"/svg/ubc.svg"}
+                description={"..."}
+                techStack={["Figma", "JavaScript", "WordPress"]}
                 organizationUrl={"https://mda.space/"}
             />
 
-            <TimelinePopup
-                isOpen={isTHUOpen}
-                onClose={onTHUClose}
-                title={"Exchange Student"}
-                organization={"Tsinghua University"}
-                date={"Feb 2025 - Jul 2025"}
-                logoSrc={"/svg/tsinghua.svg"}
-                description={"Developed software for large scale correlation and beam-forming as part of Canada's contribution to the Square Kilometer Array (SKA), a global initiative to build the world's next-largest telescope array."}
+            <TimelineWorkPopup
+                isOpen={isTTEKOpen}
+                onClose={onTTEKClose}
+                title={"Fullstack Developer Co-op"}
+                organization={"Tetra Tech"}
+                date={"Dec 2023 - Jun 2024"}
+                logoSrc={"/svg/ubc.svg"}
+                description={"..."}
+                techStack={["Figma", "JavaScript", "WordPress"]}
                 organizationUrl={"https://mda.space/"}
             />
+
+
+            
 
 
 

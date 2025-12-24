@@ -1,10 +1,12 @@
-import { Badge, Box, Button, Flex, Image, Link, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Stack, Text, useColorModeValue, useTheme } from '@chakra-ui/react'
+import { Badge, Box, Button, Flex, Image, Link, List, ListIcon, ListItem, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Stack, Text, useColorModeValue, useTheme } from '@chakra-ui/react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 
+import { GoDotFill } from "react-icons/go";
+import { MdRocketLaunch } from "react-icons/md";
 import { useState } from 'react'
 
-const TimelinePopup = ({ isOpen, onClose, title, organization, date, description, images, videoUrl, techStack, organizationUrl, githubUrl }) => {
+const TimelineWorkPopup = ({ isOpen, onClose, title, organization, date, description, images, videoUrl, techStack, organizationUrl, productUrl, contributions }) => {
     const theme = useTheme();
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -34,6 +36,7 @@ const TimelinePopup = ({ isOpen, onClose, title, organization, date, description
                 <ModalHeader>
                     <Text textStyle={'Title'}>{title}</Text>
                     <Text textStyle={'text'}>{organization}</Text>
+                    <Text textStyle={'text'}>{date}</Text>
                 </ModalHeader>
                 <ModalCloseButton />
                 <ModalBody pb={6}>
@@ -138,12 +141,12 @@ const TimelinePopup = ({ isOpen, onClose, title, organization, date, description
                         </Flex>)}
 
                     {/* Description */}
-                    <Text textStyle={'text'} mt={6}>
+                    <Text textStyle={'text'} mt={4}>
                         {description}
                     </Text>
 
                     {/* Buttons */}
-                    {(organizationUrl || githubUrl) && (
+                    {(organizationUrl || productUrl) && (
                         <Box mt={4}>
                             <Stack direction="row" spacing={2} justify={'center'}>
                                 {organizationUrl && (
@@ -156,27 +159,58 @@ const TimelinePopup = ({ isOpen, onClose, title, organization, date, description
                                         Company Site
                                     </Button>
                                 )}
-                                {githubUrl && (
-                                    <Button
-                                        leftIcon={<FaGithub />}
-                                        onClick={() => window.open(githubUrl, '_blank')}
+                                {productUrl && (
+                                    <Button 
+                                        leftIcon={<MdRocketLaunch />}
+                                        onClick={() => window.open(productUrl, '_blank')}
                                         size="sm"
                                         variant="ghost"
                                     >
-                                        Source
+                                        Product
                                     </Button>
                                 )}
                             </Stack>
                         </Box>
                     )}
 
-                    {/* Responsibilities */}
-                    <Box mt={6} pt={4} borderTop="1px" borderColor={useColorModeValue("gray.200", "gray.600")}>
-                        <Text textStyle={'subtitle'} mb={3}>Responsibilities</Text>
-                        <Stack direction="column" spacing={2}>
+                    {/* Contributions */}
+                    {contributions?.length > 0 && (
+                        <Box
+                            mt={6}
+                            pt={4}
+                            borderTop="1px"
+                            borderColor={useColorModeValue("gray.200", "gray.600")}
+                        >
+                            <Text textStyle="subtitle" mb={3}>
+                                Key Contributions
+                            </Text>
 
-                        </Stack>
-                    </Box>
+                            <List spacing={2}>
+                                {contributions.map((point, idx) => (
+                                    <ListItem
+                                        key={idx}
+                                        display="flex"
+                                        alignItems="flex-start"
+                                        textStyle="text"
+                                        fontSize="xs"
+                                    >
+                                        <ListIcon
+                                            as={GoDotFill}
+                                            mt="4px"
+                                            flexShrink={0}
+                                            color={useColorModeValue(
+                                                theme.colors.customLight,
+                                                theme.colors.customDark
+                                            )}
+                                        />
+                                        <Text as="span">{point}</Text>
+                                    </ListItem>
+                                ))}
+                            </List>
+
+                        </Box>
+                    )}
+
 
                     {/* Technologies */}
                     <Box mt={6} pt={4} borderTop="1px" borderColor={useColorModeValue("gray.200", "gray.600")}>
@@ -202,4 +236,4 @@ const TimelinePopup = ({ isOpen, onClose, title, organization, date, description
     );
 };
 
-export default TimelinePopup;
+export default TimelineWorkPopup;
