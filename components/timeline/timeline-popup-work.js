@@ -1,4 +1,4 @@
-import { Badge, Box, Button, Flex, Image, Link, List, ListIcon, ListItem, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Stack, Text, useColorModeValue, useTheme } from '@chakra-ui/react'
+import { Badge, Box, Button, Flex, Image, Link, List, ListIcon, ListItem, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Stack, Text, Wrap, useColorModeValue, useTheme } from '@chakra-ui/react'
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
 
@@ -215,7 +215,7 @@ const TimelineWorkPopup = ({ isOpen, onClose, title, organization, date, descrip
                     {/* Technologies */}
                     <Box mt={6} pt={4} borderTop="1px" borderColor={useColorModeValue("gray.200", "gray.600")}>
                         <Text textStyle={'subtitle'} mb={3}>Technologies</Text>
-                        <Stack direction="row" spacing={2}>
+                        <Wrap  direction="row" spacing={2}>
                             {techStack?.map((tech, idx) => (
                                 <Box
                                     key={idx}
@@ -228,7 +228,7 @@ const TimelineWorkPopup = ({ isOpen, onClose, title, organization, date, descrip
                                     {tech}
                                 </Box>
                             ))}
-                        </Stack>
+                        </Wrap>
                     </Box>
                 </ModalBody>
             </ModalContent>

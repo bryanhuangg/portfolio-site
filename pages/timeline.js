@@ -194,13 +194,14 @@ const Page = () => {
             <TimelineWorkPopup
                 isOpen={isVSEOpen}
                 onClose={onVSEClose}
-                title={"VSE"}
-                organization={"VSE at UBC"}
-                date={"Dec 2023 - Jun 2024"}
+                title={"Web Designer"}
+                organization={"The Vancouver School of Economics at UBC"}
+                date={"Dec 2023 - Jun 2024 (7 months)"}
                 logoSrc={"/svg/ubc.svg"}
-                description={"..."}
+                description={"Contracted by VSE at UBC to design and build a WordPress website for the Cities in Motion research lab."}
                 techStack={["Figma", "JavaScript", "WordPress"]}
-                organizationUrl={"https://mda.space/"}
+                organizationUrl={"https://economics.ubc.ca/"}
+                productUrl={"https://citiesinmotionlab.org/"}
             />
 
             <TimelineWorkPopup
@@ -208,11 +209,18 @@ const Page = () => {
                 onClose={onTTEKClose}
                 title={"Fullstack Developer Co-op"}
                 organization={"Tetra Tech"}
-                date={"Dec 2023 - Jun 2024"}
-                logoSrc={"/svg/ubc.svg"}
-                description={"..."}
-                techStack={["Figma", "JavaScript", "WordPress"]}
+                date={"Aug 2023 - Dec 2023 (5 months)"}
+                logoSrc={"/svg/tetratech.svg"}
+                description={"Worked as a fullstack developer on FusionMap, a web-based GIS platform for map-based data visualization and analysis."}
+                techStack={["Azure", "TypeScript", "Node.js", "React.js", "PostgreSQL", "Python ", "Flask", "PyTorch", "TensorFlow"]}
+                contributions={["Collaborated closely with the backend development lead to design and execute a comprehensive refactoring initiative for the Flask backend, successfully migrating it to Express.",
+                                "Developed the initial iteration of a React Native mobile application, which is now published on both the App Store and Google Play Store.",
+                                "Implemented AI models such as GroundingDINO and SAM within the application to facilitate image detection, enabling both object detection and segmentation from satellite imagery.",
+                                "Spearheaded the development and implementation of a robust subscription-based payment system leveraging Stripe to enable seamless transactions for premium software features",
+                                "Pioneered a thorough test suite with Mocha and Chai and instituted an efficient logging system using Winston rewrite for improved debugging and monitoring.",
+                                "Restructured PostgreSQL database to align with specific requirements and enhance functionality"]}
                 organizationUrl={"https://mda.space/"}
+                productUrl={"https://fusionmap.com/"}
             />
 
 
