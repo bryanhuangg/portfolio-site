@@ -47,9 +47,21 @@ const Page = () => {
                 <VerticalTimeline lineColor={useColorModeValue(theme.colors.customLight, theme.colors.customDark)} layout='2-columns'>
 
 
+                    {/* Mundo AI */}
+                    <TimelineEvent
+                        date="Apr 2026 - Present"
+                        logoSrc="/svg/mundo.svg"
+                        logoAlt="Mundo AI Logo"
+                        title="Member of Technical Staff"
+                        organization="Mundo AI (YC W25)"
+                        organizationUrl="https://mundoai.world/"
+                        description="Building software and systems for high-quality multilingual AI training data."
+                        showButton={false}
+                    />
+
                     {/* Quantitative RA */}
                     <TimelineEvent
-                        date="Feb 2025 - Jun 2025"
+                        date="Jul 2025 - Apr 2026"
                         logoSrc="/svg/ubc.svg"
                         logoAlt="UBC Logo"
                         title="Quantitative RA"

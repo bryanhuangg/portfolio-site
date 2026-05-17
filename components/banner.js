@@ -73,9 +73,9 @@ const Banner = () => {
                         </Text>
 
                         <Text textStyle={'subtitle'}>
-                            Computer Science and Economics Student at UBC
-                            <br />
-                            ex-Software Engineer at MDA Space
+
+                            Member of Technical Staff at Mundo AI (YC W25)
+                            
                         </Text>
                     </Box>
 
