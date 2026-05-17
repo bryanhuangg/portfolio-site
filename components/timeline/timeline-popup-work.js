@@ -34,7 +34,7 @@ const TimelineWorkPopup = ({ isOpen, onClose, title, organization, date, descrip
             <ModalOverlay />
             <ModalContent bg={useColorModeValue(theme.colors.bgLight, theme.colors.bgDark)}>
                 <ModalHeader>
-                    <Text textStyle={'Title'}>{title}</Text>
+                    <Text textStyle={'title'}>{title}</Text>
                     <Text textStyle={'text'}>{organization}</Text>
                     <Text textStyle={'text'}>{date}</Text>
                 </ModalHeader>

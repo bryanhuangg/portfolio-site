@@ -47,13 +47,13 @@ const Page = () => {
                 <VerticalTimeline lineColor={useColorModeValue(theme.colors.customLight, theme.colors.customDark)} layout='2-columns'>
 
 
-                    {/* Quantatitative RA */}
+                    {/* Quantitative RA */}
                     <TimelineEvent
                         date="Feb 2025 - Jun 2025"
                         logoSrc="/svg/ubc.svg"
                         logoAlt="UBC Logo"
-                        title="Quantatitative RA"
-                        organization="UBC Sauder School for Business"
+                        title="Quantitative RA"
+                        organization="UBC Sauder School of Business"
                         organizationUrl="https://www.sauder.ubc.ca/"
                         description="Built NLP pipelines and applied econometric methods to identify relationships between textual patterns and business outcomes."
                         showButton={false}

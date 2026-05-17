@@ -31,7 +31,8 @@ import UserProfile from "../components/user-profile";
 const Page = () => {
     const toast = useToast()
     const theme = useTheme();
-    const { isOpen, onOpen, onClose } = useDisclosure()
+    const { isOpen: isResumeOpen, onOpen: onResumeOpen, onClose: onResumeClose } = useDisclosure()
+    const { isOpen: isTranscriptOpen, onOpen: onTranscriptOpen, onClose: onTranscriptClose } = useDisclosure()
 
     return (
         <Container>
@@ -88,7 +89,7 @@ const Page = () => {
                             <Button
                                 variant='solid'
                                 size={'sm'}
-                                onClick={onOpen}
+                                onClick={onResumeOpen}
                             >
                                 View
                             </Button>
@@ -120,6 +121,60 @@ const Page = () => {
             <SectionTransition delay={0.2}>
                 <Card>
                     <CardBody>
+                        <Flex align="center" mb={3}>
+                            <UserProfile time={'18 hours ago'} />
+                            <Flex ml="auto" alignSelf="flex-start" alignItems="center">
+                                <TbPinnedFilled size={15} color={useColorModeValue(theme.colors.customLight, theme.colors.customDark)} />
+                                <Text textStyle={'title'} ml={1} fontSize={10} fontWeight={400}>
+                                    Pinned
+                                </Text>
+                            </Flex>
+                        </Flex>
+                        <Text textStyle={'subtitle'} mt={3}>
+                            UBC Transcript
+                        </Text>
+                        <Text textStyle={'text'} mt={1}>
+                            View or download my UBC transcript for course history and academic details.
+                        </Text>
+                    </CardBody>
+
+                    <CardFooter>
+                        <ButtonGroup spacing='2'>
+                            <Button
+                                variant='solid'
+                                size={'sm'}
+                                onClick={onTranscriptOpen}
+                            >
+                                View
+                            </Button>
+                            <Button
+                                as="a"
+                                href="/UBC_Transcript.pdf"
+                                download
+                                variant='ghost'
+                                size={'sm'}
+                                onClick={() => {
+                                    toast({
+                                        description: 'Transcript downloaded',
+                                        status: 'success',
+                                        duration: 3000,
+                                        isClosable: true,
+                                        position: 'bottom-right',
+                                        variant: 'subtle',
+                                        colorScheme: 'blue',
+                                    })
+                                }}
+                            >
+                                Download
+                            </Button>
+                        </ButtonGroup>
+                    </CardFooter>
+                </Card>
+            </SectionTransition>
+
+            <SectionTransition delay={0.3}>
+                <Card>
+                    <CardBody>
                         <UserProfile time={'22 hours ago'} />
                         <Text textStyle={'subtitle'} mt={3}>
                             Website Source Code
@@ -144,7 +199,7 @@ const Page = () => {
             </SectionTransition>
 
             {/* Resume Modal */}
-            <Modal isOpen={isOpen} onClose={onClose} size="xl">
+            <Modal isOpen={isResumeOpen} onClose={onResumeClose} size="xl">
                 <ModalOverlay />
                 <ModalContent bg={useColorModeValue(theme.colors.bgLight, theme.colors.bgDark)}>
                     <ModalHeader>
@@ -162,6 +217,33 @@ const Page = () => {
                     <ModalBody>
                         <iframe
                             src="/Resume.pdf"
+                            style={{ width: '100%', height: '75vh', borderRadius: '0.375rem' }}
+                        />
+                    </ModalBody>
+                    <ModalFooter>
+                    </ModalFooter>
+                </ModalContent>
+            </Modal>
+
+            {/* Transcript Modal */}
+            <Modal isOpen={isTranscriptOpen} onClose={onTranscriptClose} size="xl">
+                <ModalOverlay />
+                <ModalContent bg={useColorModeValue(theme.colors.bgLight, theme.colors.bgDark)}>
+                    <ModalHeader>
+                        <Box display="flex" alignItems="center">
+                            <FaFile color={useColorModeValue(theme.colors.customLight, theme.colors.customDark)} />
+                            <Text textStyle={'title'} ml={2}>
+                                UBC Transcript
+                            </Text>
+                        </Box>
+                        <Text textStyle={'subtitle'}>
+                            Course history and academic record
+                        </Text>
+                    </ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody>
+                        <iframe
+                            src="/UBC_Transcript.pdf"
                             style={{ width: '100%', height: '75vh', borderRadius: '0.375rem' }}
                         />
                     </ModalBody>

@@ -32,7 +32,7 @@ const TimelineEduPopup = ({ isOpen, onClose, title, organization, date, descript
             <ModalOverlay />
             <ModalContent bg={useColorModeValue(theme.colors.bgLight, theme.colors.bgDark)}>
                 <ModalHeader>
-                    <Text textStyle={'Title'}>{title}</Text>
+                    <Text textStyle={'title'}>{title}</Text>
                     <Text textStyle={'text'}>{organization}</Text>
                 </ModalHeader>
                 <ModalCloseButton />
